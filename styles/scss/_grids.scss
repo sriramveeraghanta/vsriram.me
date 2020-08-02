@@ -22,3 +22,16 @@
 .page-section {
   padding: 60px 0px;
 }
+
+.rounded-img {
+  display: block;
+  margin: 0px auto;
+  border-radius: 50%;
+}
+.sidebar-img-container {
+  padding-top: 60px;
+  img {
+    width: 200px;
+    height: 200px;
+  }
+}

@@ -1,0 +1,58 @@
+.sidebar-header {
+  font-family: $pacifico;
+  text-align: center;
+  margin: 30px 0px;
+}
+
+.sidebar-nav {
+  display: flex;
+  justify-content: center;
+
+  .sidebar-item {
+    text-decoration: none;
+    margin: 0 0 10px 0;
+    padding: 0;
+    list-style: none;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+
+    a {
+      font-weight: 500;
+      position: relative;
+      padding: 10px 0;
+      font-family: "Quicksand", Arial, sans-serif;
+      transition: 0.3s;
+    }
+
+    a.active {
+      text-decoration: underline !important;
+    }
+    a:hover {
+      color: $black;
+    }
+
+    a:after {
+      content: "";
+      position: absolute;
+      height: 1px;
+      bottom: 7px;
+      left: 0;
+      right: 0;
+      background-color: #2c98f0;
+      visibility: hidden;
+      -webkit-transform: scaleX(0);
+      -moz-transform: scaleX(0);
+      -ms-transform: scaleX(0);
+      -o-transform: scaleX(0);
+      transform: scaleX(0);
+      -webkit-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      -moz-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      -ms-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      -o-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+  }
+}

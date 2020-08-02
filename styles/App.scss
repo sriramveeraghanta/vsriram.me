@@ -1,7 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;500;600;700&display=swap");
+
 // Bootstrap Override
 @import "./scss/bootstrap.override.scss";
 
 // Custom Styles
+@import "./scss/gloabl";
 @import "./scss/buttons";
 @import "./scss/grids";
+@import "./scss/_lists";
 @import "./scss/typography";

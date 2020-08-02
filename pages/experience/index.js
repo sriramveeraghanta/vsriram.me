@@ -4,17 +4,17 @@ import Head from "next/head";
 // layouts
 import BasicLayout from "layouts/BasicLayout";
 
-function AboutPage() {
+function ExperiencePage() {
   return (
     <div>
       <Head>
-        <title>About</title>
+        <title>Contact</title>
       </Head>
-      About Page
+      ExperiencePage
     </div>
   );
 }
 
-AboutPage.Layout = BasicLayout;
+ExperiencePage.Layout = BasicLayout;
 
-export default AboutPage;
+export default ExperiencePage;
