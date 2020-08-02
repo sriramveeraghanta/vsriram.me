@@ -16,6 +16,7 @@
   grid-area: site-main;
   box-sizing: border-box;
   background: #ebebeb;
+  position: relative;
   overflow-y: auto;
 }
 
@@ -28,6 +29,7 @@
   margin: 0px auto;
   border-radius: 50%;
 }
+
 .sidebar-img-container {
   padding-top: 60px;
   img {

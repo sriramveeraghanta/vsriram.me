@@ -64,6 +64,7 @@ function SidebarComponent(props) {
           </ActiveLink>
         </div>
       </Nav>
+      <small>https://colorlib.com/preview/theme/jackson/</small>
     </div>
   );
 }
