@@ -1,0 +1,22 @@
+.btn-boxed {
+  border: 3px solid #fff;
+  border-radius: 0px;
+  background: transparent;
+  font-weight: 700;
+}
+
+.btn-boxed:hover,
+.btn-boxed:focus,
+.btn-boxed:active,
+.btn-boxed:not(:disabled):not(.disabled):active {
+  background-color: #ffffff;
+  color: #212121;
+  font-weight: 700;
+  border-color: #fff;
+  box-shadow: none !important;
+}
+
+.btn-white {
+  color: white;
+  border-color: #fff;
+}
