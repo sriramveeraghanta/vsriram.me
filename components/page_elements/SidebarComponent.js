@@ -22,7 +22,7 @@ function SidebarComponent(props) {
             <a className="sidebar-link">Home</a>
           </ActiveLink>
         </div>
-        <div className="sidebar-item">
+        {/* <div className="sidebar-item">
           <ActiveLink href="/about">
             <a className="sidebar-link">About</a>
           </ActiveLink>
@@ -62,9 +62,9 @@ function SidebarComponent(props) {
           <ActiveLink href="/contact">
             <a className="sidebar-link">Contact</a>
           </ActiveLink>
-        </div>
+        </div> */}
       </Nav>
-      <small>https://colorlib.com/preview/theme/jackson/</small>
+      {/* <small>https://colorlib.com/preview/theme/jackson/</small> */}
     </div>
   );
 }
