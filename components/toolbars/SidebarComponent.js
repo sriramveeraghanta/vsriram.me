@@ -2,7 +2,7 @@ import React from "react";
 // reactbootstrap
 import { Navbar, Nav } from "react-bootstrap";
 // components
-import ActiveLink from "components/page_elements/ActiveLink";
+import ActiveLink from "components/elements/ActiveLink";
 
 function SidebarComponent(props) {
   return (

@@ -1,155 +1,107 @@
 import React from "react";
 // next imports
 import Head from "next/head";
-// layouts
-import BasicLayout from "layouts/BasicLayout";
+// components
+import { ActiveLink } from "components/elements";
 // react bootstrap
-import { Container, Button } from "react-bootstrap";
+import { Container, Row, Col, Nav } from "react-bootstrap";
+// icons
+import { FaEnvelope, FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
 
 function HomePage() {
-  const bubbleBackgroud = () => {
-    var canvas = document.getElementById("container");
-    var clone = document.getElementById("blurCanvasBottom");
-
-    var cloneCtx = clone.getContext("2d");
-    var ctx = canvas.getContext("2d");
-
-    var w = $("#blurCanvasTop").width();
-    var h = $("#blurCanvasTop").height();
-
-    var ww = $(window).width();
-    var wh = $(window).height();
-    canvas.width = ww;
-    canvas.height = wh;
-    var partCount = 100;
-    var particles = [];
-
-    function particle() {
-      this.color = "rgba(255,255,255," + Math.random() + ")";
-      // console.log(this.color);
-      this.x = randomInt(0, ww);
-      this.y = randomInt(0, wh);
-      this.direction = {
-        x: -1 + Math.random() * 2,
-        y: -1 + Math.random() * 2,
-      };
-      this.vx = 0.3 * Math.random();
-      this.vy = 0.3 * Math.random();
-      this.radius = randomInt(2, 3);
-      this.float = function () {
-        this.x += this.vx * this.direction.x;
-        this.y += this.vy * this.direction.y;
-      };
-      this.changeDirection = function (axis) {
-        this.direction[axis] *= -1;
-      };
-      this.boundaryCheck = function () {
-        if (this.x >= ww) {
-          this.x = ww;
-          this.changeDirection("x");
-        } else if (this.x <= 0) {
-          this.x = 0;
-          this.changeDirection("x");
-        }
-        if (this.y >= wh) {
-          this.y = wh;
-          this.changeDirection("y");
-        } else if (this.y <= 0) {
-          this.y = 0;
-          this.changeDirection("y");
-        }
-      };
-      this.draw = function () {
-        ctx.beginPath();
-        ctx.fillStyle = this.color;
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-        ctx.fill();
-      };
-    }
-    function clearCanvas() {
-      cloneCtx.clearRect(0, 0, ww, wh);
-      ctx.clearRect(0, 0, ww, wh);
-    }
-    function createParticles() {
-      for (let i = 0; i < partCount; i++) {
-        let p = new particle();
-        particles.push(p);
-      }
-    }
-    function drawParticles() {
-      for (let i = 0; i < particles.length; i++) {
-        let p = particles[i];
-        p.draw();
-      }
-    }
-    function updateParticles() {
-      for (let i = particles.length - 1; i >= 0; i--) {
-        let p = particles[i];
-        p.float();
-        p.boundaryCheck();
-      }
-    }
-    createParticles();
-    drawParticles();
-    function animateParticles() {
-      clearCanvas();
-      drawParticles();
-      updateParticles();
-      cloneCtx.drawImage(canvas, 0, 0);
-      requestAnimationFrame(animateParticles);
-    }
-    requestAnimationFrame(animateParticles);
-    cloneCtx.drawImage(canvas, 0, 0);
-
-    $(window).on("resize", function () {
-      ww = $(window).width();
-      wh = $(window).height();
-      canvas.width = ww;
-      canvas.height = wh;
-      clearCanvas();
-      particles = [];
-      createParticles();
-      drawParticles();
-    });
-    function randomInt(min, max) {
-      return Math.floor(Math.random() * (max - min + 1) + min);
-    }
-
-    function velocityInt(min, max) {
-      return Math.random() * (max - min + 1) + min;
-    }
-  };
-
-  React.useEffect(() => {
-    bubbleBackgroud();
-  });
-
   return (
     <>
       <Head>
         <title>Sriram Veeraghanta</title>
-        <link rel="icon" href="/favicon.ico" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.3.0/snap.svg-min.js"></script>
       </Head>
-      <div className="index-background">
-        <canvas id="container" role="main"></canvas>
-        <div className="content">
-          <h1 className="title">Sriram Veeraghanta</h1>
-          <p className="desc">Web Developer, Product Designer and Machine Learning Enthusiast.</p>
-          <Button className="btn-boxed btn-white">Know More</Button>
-        </div>
-        <div className="blur blurTop">
-          <canvas className="canvas" id="blurCanvasTop"></canvas>
-        </div>
-        <div className="blur blurBottom">
-          <canvas width="1000px" height="1000px" className="canvas" id="blurCanvasBottom"></canvas>
-        </div>
-      </div>
+      <section className="section">
+        <Container>
+          <Row>
+            <Col>
+              <img className="profile-image" src="/images/profile-pic.jpg" />
+            </Col>
+            <Col className="d-flex">
+              <div className="align-self-center">
+                <h1 className="title">Sriram Veeraghanta</h1>
+                <p className="desc">
+                  Web Developer, Product Designer and Machine Learning Enthusiast.
+                </p>
+                <div className="p-2">
+                  <a
+                    class="profile-social-icons"
+                    href="mailto:veeraghanta.sriram@gmail.com"
+                    target="_blank"
+                  >
+                    <FaEnvelope />
+                  </a>
+                  <a
+                    class="profile-social-icons"
+                    href="mailto:veeraghanta.sriram@gmail.com"
+                    target="_blank"
+                  >
+                    <FaGithub />
+                  </a>
+                  <a
+                    class="profile-social-icons"
+                    href="mailto:veeraghanta.sriram@gmail.com"
+                    target="_blank"
+                  >
+                    <FaTwitter />
+                  </a>
+                  <a
+                    class="profile-social-icons"
+                    href="mailto:veeraghanta.sriram@gmail.com"
+                    target="_blank"
+                  >
+                    <FaLinkedin />
+                  </a>
+                </div>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+        <Container className="pt-4">
+          <Nav className="justify-content-center" activeKey="/home">
+            <Nav.Item>
+              <ActiveLink href="/">
+                <Nav.Link className="main-nav">Home</Nav.Link>
+              </ActiveLink>
+            </Nav.Item>
+            <Nav.Item>
+              <ActiveLink href="/skills">
+                <Nav.Link className="main-nav">Skills</Nav.Link>
+              </ActiveLink>
+            </Nav.Item>
+            <Nav.Item>
+              <ActiveLink href="/education">
+                <Nav.Link className="main-nav">Education</Nav.Link>
+              </ActiveLink>
+            </Nav.Item>
+            <Nav.Item>
+              <ActiveLink href="/experience">
+                <Nav.Link className="main-nav">Experience</Nav.Link>
+              </ActiveLink>
+            </Nav.Item>
+            <Nav.Item>
+              <ActiveLink href="/work">
+                <Nav.Link className="main-nav">Work</Nav.Link>
+              </ActiveLink>
+            </Nav.Item>
+            <Nav.Item>
+              <ActiveLink href="/blog">
+                <Nav.Link className="main-nav">Blog</Nav.Link>
+              </ActiveLink>
+            </Nav.Item>
+            <Nav.Item>
+              <ActiveLink href="/contact">
+                <Nav.Link className="main-nav">Contact</Nav.Link>
+              </ActiveLink>
+            </Nav.Item>
+          </Nav>
+        </Container>
+      </section>
     </>
   );
 }
-
-HomePage.Layout = BasicLayout;
 
 export default HomePage;

@@ -1,6 +1,6 @@
 import React from "react";
 // components
-import SidebarComponent from "components/page_elements/SidebarComponent";
+import SidebarComponent from "components/toolbars/SidebarComponent";
 // framer
 import { motion } from "framer-motion";
 
