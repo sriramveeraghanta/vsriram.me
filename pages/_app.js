@@ -10,15 +10,12 @@ import "styles/App.scss";
 
 class MyApp extends App {
   render() {
-    const { Component, pageProps, router, err } = this.props;
-    const Layout = Component.Layout || React.Fragment;
+    const { Component, pageProps, err } = this.props;
     const modifiedPageProps = { ...pageProps, err };
 
     return (
       <>
-        <Layout route={router.route}>
-          <Component {...modifiedPageProps} />
-        </Layout>
+        <Component {...modifiedPageProps} />
       </>
     );
   }

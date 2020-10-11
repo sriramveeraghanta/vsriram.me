@@ -9,7 +9,7 @@ const ActiveLink = ({ href, children }) => {
   if (router.pathname === href) {
     className = `${className} active`;
   }
-  return <Link href={href}>{React.cloneElement(children, { className })}</Link>;
+  return <Link href={href}>{React.cloneElement(children, { className, href })}</Link>;
 };
 
 export default ActiveLink;

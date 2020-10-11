@@ -1,6 +1,7 @@
 html,
 body {
   font-family: "PT Mono", monospace;
+  font-weight: 400;
 }
 
 h1,
@@ -10,16 +11,4 @@ h4,
 h5,
 h6 {
   font-family: "Share Tech Mono", monospace;
-}
-
-.main-nav {
-  font-size: 20px;
-  letter-spacing: 1px;
-  font-weight: 700;
-  padding-bottom: 5px;
-  font-family: "Share Tech Mono", monospace;
-}
-
-.main-nav.active {
-  border-bottom: 2px solid #333;
 }

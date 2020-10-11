@@ -1,8 +1,10 @@
 import React from "react";
 // next imports
 import Head from "next/head";
-// layouts
-import BasicLayout from "layouts/BasicLayout";
+// components
+import { NavigationToolbar } from "components/toolbars";
+// react bootstrap
+import { Col, Container, Row } from "react-bootstrap";
 
 function BlogPage() {
   return (
@@ -10,11 +12,16 @@ function BlogPage() {
       <Head>
         <title>Blog</title>
       </Head>
-      Blog Page
+      <NavigationToolbar />
+      <section className="section">
+        <Container>
+          <Row>
+            <Col>BlogPage</Col>
+          </Row>
+        </Container>
+      </section>
     </div>
   );
 }
-
-BlogPage.Layout = BasicLayout;
 
 export default BlogPage;

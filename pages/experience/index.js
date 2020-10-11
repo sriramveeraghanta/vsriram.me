@@ -1,20 +1,27 @@
 import React from "react";
 // next imports
 import Head from "next/head";
-// layouts
-import BasicLayout from "layouts/BasicLayout";
+// components
+import { NavigationToolbar } from "components/toolbars";
+// react bootstrap
+import { Col, Container, Row } from "react-bootstrap";
 
 function ExperiencePage() {
   return (
     <div>
       <Head>
-        <title>Contact</title>
+        <title>Experience</title>
       </Head>
-      ExperiencePage
+      <NavigationToolbar />
+      <section className="section">
+        <Container>
+          <Row>
+            <Col>Experience page</Col>
+          </Row>
+        </Container>
+      </section>
     </div>
   );
 }
-
-ExperiencePage.Layout = BasicLayout;
 
 export default ExperiencePage;

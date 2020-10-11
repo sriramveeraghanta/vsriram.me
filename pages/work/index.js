@@ -1,20 +1,27 @@
 import React from "react";
 // next imports
 import Head from "next/head";
-// layouts
-import BasicLayout from "layouts/BasicLayout";
+// components
+import { NavigationToolbar } from "components/toolbars";
+// react bootstrap
+import { Col, Container, Row } from "react-bootstrap";
 
 function WorkPage() {
   return (
     <div>
       <Head>
-        <title>Contact</title>
+        <title>Work</title>
       </Head>
-      WorkPage
+      <NavigationToolbar />
+      <section className="section">
+        <Container>
+          <Row>
+            <Col>Work page</Col>
+          </Row>
+        </Container>
+      </section>
     </div>
   );
 }
-
-WorkPage.Layout = BasicLayout;
 
 export default WorkPage;
