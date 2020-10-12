@@ -1,0 +1,36 @@
+.skill-item {
+  position: relative;
+  width: 100%;
+  p {
+    font-size: 14px;
+  }
+}
+.skill-meter {
+  height: 8px;
+}
+
+.icon-wrapper {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.floating {
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+@keyframes floating {
+  from {
+    transform: translate(0, 0px);
+  }
+  65% {
+    transform: translate(0, 15px);
+  }
+  to {
+    transform: translate(0, -0px);
+  }
+}

@@ -76,8 +76,8 @@ function HomePage() {
           <p className="about-text">
             Web Developer, Back-end Engineer, Product Designer, and Machine Learning Enthusiast. I
             had a good share of experience working with frameworks like Flask, Django, ReactJs,
-            Vuejs. Designed products in areas like E-learning, E-commerce, Event spaces, and
-            Fintech. Focusing on building products using Machine Learning Algorithms.{" "}
+            Vuejs. Designed products in various areas like E-learning, E-commerce, Event spaces, and
+            Fintech. Focusing on building products using Machine Learning Algorithms.
           </p>
         </Container>
       </section>

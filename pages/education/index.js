@@ -15,9 +15,41 @@ function EducationPage() {
       <NavigationToolbar />
       <section className="section">
         <Container>
-          <Row>
-            <Col>Education page</Col>
-          </Row>
+          <h3 className="mb-4">Education</h3>
+          <hr />
+          <article>
+            <div className="edu-item-header">
+              <h5>
+                Programming and Web Technologies
+                <span className="float-right">(2019 -2021)</span>
+              </h5>
+            </div>
+            <div className="edu-item-body">
+              <p className="mb-1">
+                <a href="https://isi-mtl.com/en/" target="_blank">
+                  L'institut Supérieur d'Informatique{" "}
+                </a>
+              </p>
+              <p>Quebec, Canada</p>
+            </div>
+          </article>
+
+          <article>
+            <div className="edu-item-header">
+              <h5>
+                Bachelor of Technology in Information Technology
+                <span className="float-right">(2012 -2016)</span>
+              </h5>
+            </div>
+            <div className="edu-item-body">
+              <p className="mb-1">
+                <a href="https://www.jntuk.edu.in/" target="_blank">
+                  Jawaharlal Nehru Technological University Kakinada
+                </a>
+              </p>
+              <p>Kakinada, Andhra Pradesh, India.</p>
+            </div>
+          </article>
         </Container>
       </section>
     </div>
