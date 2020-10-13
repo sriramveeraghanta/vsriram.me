@@ -3,8 +3,9 @@ import React from "react";
 import Head from "next/head";
 // components
 import { NavigationToolbar } from "components/toolbars";
+import { GithubRepoCard } from "components/cards";
 // react bootstrap
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row, Card, Button } from "react-bootstrap";
 
 function WorkPage() {
   return (
@@ -15,8 +16,15 @@ function WorkPage() {
       <NavigationToolbar />
       <section className="section">
         <Container>
+          {/* <h3 className="text-center">Things you can contribute to</h3> */}
+          <h3 className="text-center">Things I made for fun.</h3>
           <Row>
-            <Col>Work page</Col>
+            <Col>
+              <GithubRepoCard url="https://api.github.com/repos/sriramveeraghanta/github-clone-android" />
+            </Col>
+            <Col>
+              <GithubRepoCard url="https://api.github.com/repos/sriramveeraghanta/hangman-game" />
+            </Col>
           </Row>
         </Container>
       </section>

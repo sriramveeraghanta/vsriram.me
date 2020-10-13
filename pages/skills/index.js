@@ -18,7 +18,7 @@ function SkillsPage() {
       <section className="section">
         <Container>
           <h3 className="text-center mb-4">
-            Languages I am in <FaHeart /> With
+            Languages I am in <FaHeart /> with
           </h3>
           <Row className="mb-4">
             <Col md={4}>
@@ -54,7 +54,7 @@ function SkillsPage() {
                   <h5>Elixir</h5>
                   <ProgressBar className="mb-2 mt-1 skill-meter" now={60} />
                   <p>
-                    It is the era where I started exploring functional programming languages, I
+                    It is the time when I started exploring functional programming languages, I
                     started with Clojure and got scared of the syntactical sugar. Then i started
                     learning elixir which helps me to understand how process isolation helps us to
                     solve most complicated problems in less time using concurrency.
@@ -104,15 +104,16 @@ function SkillsPage() {
                   <h5>Phoenix</h5>
                   <ProgressBar className="mb-2 mt-1 skill-meter" now={50} />
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    When i am looking for tool to create live dashboards, Phoenix live view
+                    attracted me to explore phoenix framework. This thing is a beauty, with the help
+                    of ecto i can create database models easily and channels can bring life to you
+                    frontend screens.
                   </p>
                 </div>
               </div>
             </Col>
           </Row>
-          <hr />
+          {/* <hr />
           <h3 className="text-center mb-4 mt-4">I build frontend Using</h3>
           <Row>
             <Col md={4}>
@@ -343,7 +344,7 @@ function SkillsPage() {
                 </div>
               </div>
             </Col>
-          </Row>
+          </Row> */}
         </Container>
       </section>
     </div>

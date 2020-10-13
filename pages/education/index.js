@@ -15,19 +15,19 @@ function EducationPage() {
       <NavigationToolbar />
       <section className="section">
         <Container>
-          <h3 className="mb-4">Education</h3>
-          <hr />
+          {/* <h3 className="mb-4">Education</h3>
+          <hr /> */}
           <article>
             <div className="edu-item-header">
               <h5>
-                Programming and Web Technologies
+                Programming and Web Technologies Diploma
                 <span className="float-right">(2019 -2021)</span>
               </h5>
             </div>
             <div className="edu-item-body">
               <p className="mb-1">
                 <a href="https://isi-mtl.com/en/" target="_blank">
-                  L'institut Supérieur d'Informatique{" "}
+                  L'institut Supérieur d'Informatique
                 </a>
               </p>
               <p>Quebec, Canada</p>
