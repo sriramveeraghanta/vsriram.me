@@ -39,7 +39,7 @@ function HomePage() {
                   <li className="social-icons-item">
                     <a
                       className="social-icons-link"
-                      href="mailto:veeraghanta.sriram@gmail.com"
+                      href="https://github.com/sriramveeraghanta"
                       target="_blank"
                     >
                       <FaGithub />
@@ -49,7 +49,7 @@ function HomePage() {
                   <li className="social-icons-item">
                     <a
                       className="social-icons-link"
-                      href="mailto:veeraghanta.sriram@gmail.com"
+                      href="https://twitter.com/issriramv"
                       target="_blank"
                     >
                       <FaTwitter />
@@ -58,7 +58,7 @@ function HomePage() {
                   <li className="social-icons-item">
                     <a
                       className="social-icons-link"
-                      href="mailto:veeraghanta.sriram@gmail.com"
+                      href="https://www.linkedin.com/in/sriram-veeraghanta-22933798/"
                       target="_blank"
                     >
                       <FaLinkedin />
