@@ -3,8 +3,6 @@ import React from "react";
 import App from "next/app";
 // axios config
 import "config/axios_configuration";
-// sentry configuration
-import "config/sentry_configuration";
 // app css
 import "styles/App.scss";
 
