@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 // react bootstrap
-import { Card, Button } from "react-bootstrap";
+import { Card, Button } from 'react-bootstrap';
 // hooks
-import { useRequest } from "lib/hooks";
+import { useRequest } from 'lib/hooks';
 
 function GithubRepoCard(props) {
   const { data } = useRequest({ url: props.url });

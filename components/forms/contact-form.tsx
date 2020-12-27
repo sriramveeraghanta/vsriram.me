@@ -1,8 +1,8 @@
-import React from "react";
+import React, { FC } from 'react';
 // react bootstrap
-import { FormGroup, FormControl, Button } from "react-bootstrap";
+import { FormGroup, FormControl, Button } from 'react-bootstrap';
 
-function ContactForm() {
+const ContactForm: FC = () => {
   return (
     <form>
       <FormGroup>
@@ -15,12 +15,12 @@ function ContactForm() {
       </FormGroup>
       <FormGroup>
         <label>Message</label>
-        <FormControl as="textarea" rows="3" />
+        <FormControl as="textarea" />
       </FormGroup>
       <FormGroup>
         <Button variant="primary">Submit</Button>
       </FormGroup>
     </form>
   );
-}
+};
 export default ContactForm;

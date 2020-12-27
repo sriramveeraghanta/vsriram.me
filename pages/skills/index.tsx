@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 // next imports
-import Head from "next/head";
+import Head from 'next/head';
 // components
-import { NavigationToolbar } from "components/toolbars";
+import { NavigationToolbar } from 'components/toolbars';
 // react bootstrap
-import { Col, Container, Row, ProgressBar } from "react-bootstrap";
+import { Col, Container, Row, ProgressBar } from 'react-bootstrap';
 // icons
-import { FaPython, FaHeart } from "react-icons/fa";
+import { FaHeart } from 'react-icons/fa';
 
 function SkillsPage() {
   return (

@@ -1,19 +1,14 @@
-import React from "react";
-// next imports
-import Head from "next/head";
+import React, { FC } from 'react';
 // components
-import { NavigationToolbar } from "components/toolbars";
+import { NavigationToolbar } from 'components/toolbars';
 // react bootstrap
-import { Container, Row, Col, Image } from "react-bootstrap";
+import { Container, Row, Col, Image } from 'react-bootstrap';
 // icons
-import { FaEnvelope, FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaEnvelope, FaTwitter, FaLinkedin, FaGithub } from 'react-icons/fa';
 
-function HomePage() {
+const AboutView: FC = () => {
   return (
-    <>
-      <Head>
-        <title>Sriram Veeraghanta</title>
-      </Head>
+    <div>
       <section className="section">
         <Container>
           <Row>
@@ -32,7 +27,7 @@ function HomePage() {
                       className="social-icons-link"
                       href="mailto:veeraghanta.sriram@gmail.com"
                       target="_blank"
-                    >
+                      rel="noreferrer">
                       <FaEnvelope />
                     </a>
                   </li>
@@ -41,7 +36,7 @@ function HomePage() {
                       className="social-icons-link"
                       href="https://github.com/sriramveeraghanta"
                       target="_blank"
-                    >
+                      rel="noreferrer">
                       <FaGithub />
                     </a>
                   </li>
@@ -51,7 +46,7 @@ function HomePage() {
                       className="social-icons-link"
                       href="https://twitter.com/issriramv"
                       target="_blank"
-                    >
+                      rel="noreferrer">
                       <FaTwitter />
                     </a>
                   </li>
@@ -60,7 +55,7 @@ function HomePage() {
                       className="social-icons-link"
                       href="https://www.linkedin.com/in/sriram-veeraghanta-22933798/"
                       target="_blank"
-                    >
+                      rel="noreferrer">
                       <FaLinkedin />
                     </a>
                   </li>
@@ -81,8 +76,8 @@ function HomePage() {
           </p>
         </Container>
       </section>
-    </>
+    </div>
   );
-}
+};
 
-export default HomePage;
+export default AboutView;

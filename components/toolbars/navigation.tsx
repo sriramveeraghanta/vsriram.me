@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 // react bootstrap
-import { Nav } from "react-bootstrap";
+import { Nav } from 'react-bootstrap';
 // components
-import { ActiveLink } from "components/elements";
+import { ActiveLink } from 'components/elements';
 
 function NavigationToolbar() {
   return (

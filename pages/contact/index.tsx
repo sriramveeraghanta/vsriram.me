@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 // next imports
-import Head from "next/head";
+import Head from 'next/head';
 // components
-import { NavigationToolbar } from "components/toolbars";
-import { ContactForm } from "components/forms";
+import { NavigationToolbar } from 'components/toolbars';
+import { ContactForm } from 'components/forms';
 // react bootstrap
-import { Col, Container, FormGroup, Row } from "react-bootstrap";
+import { Col, Container, Row } from 'react-bootstrap';
 // react-icons
-import { FaEnvelope, FaTwitter, FaGithub } from "react-icons/fa";
+import { FaEnvelope, FaTwitter, FaGithub } from 'react-icons/fa';
 
 function ContactPage() {
   return (

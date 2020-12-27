@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 // next imports
-import Head from "next/head";
+import Head from 'next/head';
 // components
-import { NavigationToolbar } from "components/toolbars";
+import { NavigationToolbar } from 'components/toolbars';
 // react bootstrap
-import { Col, Container, Row, Card, Button } from "react-bootstrap";
+import { Col, Container, Row, Card, Button } from 'react-bootstrap';
 
 function BlogPage() {
   return (

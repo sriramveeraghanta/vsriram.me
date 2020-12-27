@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 // next imports
-import Head from "next/head";
+import Head from 'next/head';
 // components
-import { NavigationToolbar } from "components/toolbars";
+import { NavigationToolbar } from 'components/toolbars';
 // react bootstrap
-import { Col, Container, Row } from "react-bootstrap";
+import { Container } from 'react-bootstrap';
 
 function EducationPage() {
   return (
@@ -26,8 +26,8 @@ function EducationPage() {
             </div>
             <div className="edu-item-body">
               <p className="mb-1">
-                <a href="https://isi-mtl.com/en/" target="_blank">
-                  L'institut Supérieur d'Informatique
+                <a href="https://isi-mtl.com/en/" target="_blank" rel="noreferrer">
+                  L&apos;institut Supérieur d&apos;Informatique
                 </a>
               </p>
               <p>Quebec, Canada</p>
@@ -43,7 +43,7 @@ function EducationPage() {
             </div>
             <div className="edu-item-body">
               <p className="mb-1">
-                <a href="https://www.jntuk.edu.in/" target="_blank">
+                <a href="https://www.jntuk.edu.in/" target="_blank" rel="noreferrer">
                   Jawaharlal Nehru Technological University Kakinada
                 </a>
               </p>
