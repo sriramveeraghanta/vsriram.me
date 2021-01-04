@@ -1,31 +1,35 @@
-import React from 'react';
+import React, { FC } from 'react';
 // next imports
 import Head from 'next/head';
-// components
-import { NavigationToolbar } from 'components/toolbars';
-// react bootstrap
-import { Col, Container, Row, ProgressBar } from 'react-bootstrap';
 // icons
 import { FaHeart } from 'react-icons/fa';
 
-function SkillsPage() {
+const SkillsPage: FC = () => {
   return (
     <div>
       <Head>
         <title>Skills</title>
       </Head>
-      <NavigationToolbar />
       <section className="section">
-        <Container>
+        <div className="container">
           <h3 className="text-center mb-4">
             Languages I am in <FaHeart /> with
           </h3>
-          <Row className="mb-4">
-            <Col md={4}>
+          <div className="row mb-4">
+            <div className="col col-md-4">
               <div className="skill-item">
                 <div className="text-center">
                   <h5>Javascript / NodeJS</h5>
-                  <ProgressBar className="mb-2 mt-1 skill-meter" now={90} />
+                  <div className="progress skill-meter mb-2 mt-1 ">
+                    <div
+                      className="progress-bar"
+                      role="progressbar"
+                      style={{ width: '90%' }}
+                      aria-valuenow={0}
+                      aria-valuemin={0}
+                      aria-valuemax={90}
+                    ></div>
+                  </div>
                   <p>
                     Javascript is the first programming language I fell in love with. I started
                     learning Javascript as a student in my undergrad. The first application I built
@@ -34,12 +38,22 @@ function SkillsPage() {
                   </p>
                 </div>
               </div>
-            </Col>
-            <Col md={4}>
+            </div>
+            <div className="col-md-4">
               <div className="skill-item">
                 <div className="text-center">
                   <h5>Python</h5>
-                  <ProgressBar className="mb-2 mt-1 skill-meter" now={80} />
+                  <div className="progress skill-meter mb-2 mt-1">
+                    <div
+                      className="progress-bar"
+                      role="progressbar"
+                      style={{ width: '80%' }}
+                      aria-valuenow={0}
+                      aria-valuemin={0}
+                      aria-valuemax={80}
+                    ></div>
+                  </div>
+
                   <p>
                     A language which changed the way i wrote code. As a computer science student i
                     am very passionate to learn new things. Python language helped me to explore my
@@ -47,12 +61,20 @@ function SkillsPage() {
                   </p>
                 </div>
               </div>
-            </Col>
-            <Col md={4}>
+            </div>
+            <div className="col col-md-4">
               <div className="skill-item">
                 <div className="text-center">
                   <h5>Elixir</h5>
-                  <ProgressBar className="mb-2 mt-1 skill-meter" now={60} />
+                  <div className="progress skill-meter mb-2 mt-1">
+                    <div
+                      className="progress-bar"
+                      role="progressbar"
+                      aria-valuenow={0}
+                      aria-valuemin={0}
+                      aria-valuemax={60}
+                    ></div>
+                  </div>
                   <p>
                     It is the time when I started exploring functional programming languages, I
                     started with Clojure and got scared of the syntactical sugar. Then i started
@@ -61,16 +83,24 @@ function SkillsPage() {
                   </p>
                 </div>
               </div>
-            </Col>
-          </Row>
+            </div>
+          </div>
           <hr />
           <h3 className="text-center mb-4 mt-4">Frameworks made my life easy</h3>
-          <Row>
-            <Col md={4}>
+          <div className="row">
+            <div className="col-md-4">
               <div className="skill-item">
                 <div className="text-center">
                   <h5>NextJS</h5>
-                  <ProgressBar className="mb-2 mt-1 skill-meter" now={100} />
+                  <div className="progress skill-meter mb-2 mt-1">
+                    <div
+                      className="progress-bar"
+                      role="progressbar"
+                      aria-valuenow={0}
+                      aria-valuemin={0}
+                      aria-valuemax={100}
+                    ></div>
+                  </div>
                   <p>
                     When i am in the hunt for the best tools to build highly scalable NodeJs
                     Applications using React and server-side rendering techniques. I ran in NextJS,
@@ -81,12 +111,20 @@ function SkillsPage() {
                   </p>
                 </div>
               </div>
-            </Col>
-            <Col md={4}>
+            </div>
+            <div className="col col-md-4">
               <div className="skill-item">
                 <div className="text-center">
                   <h5>Django</h5>
-                  <ProgressBar className="mb-2 mt-1 skill-meter" now={80} />
+                  <div className="progress skill-meter mb-2 mt-1">
+                    <div
+                      className="progress-bar"
+                      role="progressbar"
+                      aria-valuenow={0}
+                      aria-valuemin={0}
+                      aria-valuemax={80}
+                    ></div>
+                  </div>
                   <p>
                     I believe Django is the perfect framework for building web applications and API
                     Servers. With huge support of django community and the beauty of simplicity in
@@ -97,12 +135,20 @@ function SkillsPage() {
                   </p>
                 </div>
               </div>
-            </Col>
-            <Col md={4}>
+            </div>
+            <div className="col-md-4">
               <div className="skill-item">
                 <div className="text-center">
                   <h5>Phoenix</h5>
-                  <ProgressBar className="mb-2 mt-1 skill-meter" now={50} />
+                  <div className="progress skill-meter mb-2 mt-1">
+                    <div
+                      className="progress-bar"
+                      role="progressbar"
+                      aria-valuenow={0}
+                      aria-valuemin={0}
+                      aria-valuemax={50}
+                    ></div>
+                  </div>
                   <p>
                     When i am looking for tool to create live dashboards, Phoenix live view
                     attracted me to explore phoenix framework. This thing is a beauty, with the help
@@ -111,8 +157,8 @@ function SkillsPage() {
                   </p>
                 </div>
               </div>
-            </Col>
-          </Row>
+            </div>
+          </div>
           {/* <hr />
           <h3 className="text-center mb-4 mt-4">I build frontend Using</h3>
           <Row>
@@ -345,10 +391,10 @@ function SkillsPage() {
               </div>
             </Col>
           </Row> */}
-        </Container>
+        </div>
       </section>
     </div>
   );
-}
+};
 
 export default SkillsPage;

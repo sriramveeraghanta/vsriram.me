@@ -1,23 +1,24 @@
-import React from 'react';
-// react bootstrap
-import { Card, Button } from 'react-bootstrap';
+import React, { FC } from 'react';
 // hooks
 import { useRequest } from 'lib/hooks';
 
-function GithubRepoCard(props) {
+const GithubRepoCard: FC = props => {
   const { data } = useRequest({ url: props.url });
 
   return (
-    <Card>
-      <Card.Body>
-        <Card.Title>{data && data.name}</Card.Title>
-        <Card.Text>{data && data.description}</Card.Text>
-        <Button as="a" href={data && data.html_url} target="_blank" variant="primary">
+    <div className="card">
+      <div className="card-body">
+        <h5 className="card-title">{data && data.name}</h5>
+        <p className="card-text">{data && data.description}</p>
+        <a href="#" className="btn btn-primary">
+          Go somewhere
+        </a>
+        <a href={data && data.html_url} target="_blank" rel="noreferrer">
           Visit
-        </Button>
-      </Card.Body>
-    </Card>
+        </a>
+      </div>
+    </div>
   );
-}
+};
 
 export default GithubRepoCard;

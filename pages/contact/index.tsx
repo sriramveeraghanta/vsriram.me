@@ -2,10 +2,7 @@ import React from 'react';
 // next imports
 import Head from 'next/head';
 // components
-import { NavigationToolbar } from 'components/toolbars';
 import { ContactForm } from 'components/forms';
-// react bootstrap
-import { Col, Container, Row } from 'react-bootstrap';
 // react-icons
 import { FaEnvelope, FaTwitter, FaGithub } from 'react-icons/fa';
 
@@ -15,11 +12,10 @@ function ContactPage() {
       <Head>
         <title>Contact</title>
       </Head>
-      <NavigationToolbar />
       <section className="section">
-        <Container>
-          <Row>
-            <Col className="d-flex">
+        <div className="container">
+          <div className="row">
+            <div className="col d-flex">
               <div className="align-self-center w-100">
                 <h5 className="mb-4">
                   <FaEnvelope />
@@ -34,12 +30,12 @@ function ContactPage() {
                   <span className="pl-3">issriramv</span>
                 </h5>
               </div>
-            </Col>
-            <Col>
+            </div>
+            <div className="col">
               <ContactForm />
-            </Col>
-          </Row>
-        </Container>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   );

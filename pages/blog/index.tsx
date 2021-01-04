@@ -1,10 +1,6 @@
 import React from 'react';
 // next imports
 import Head from 'next/head';
-// components
-import { NavigationToolbar } from 'components/toolbars';
-// react bootstrap
-import { Col, Container, Row, Card, Button } from 'react-bootstrap';
 
 function BlogPage() {
   return (
@@ -12,22 +8,21 @@ function BlogPage() {
       <Head>
         <title>Blog</title>
       </Head>
-      <NavigationToolbar />
       <section className="section">
-        <Container>
+        <div className="container">
           <h3 className="text-center">Somethings you might like.</h3>
-          <Row>
-            <Col md={4}>
-              <Card>
-                <Card.Body>
-                  <Card.Title>CSS tricks that makes web designing easy</Card.Title>
-                  <Card.Text className="text-primary">Mar 22, 2017</Card.Text>
-                  <Button variant="primary">Visit</Button>
-                </Card.Body>
-              </Card>
-            </Col>
-          </Row>
-        </Container>
+          <div className="row">
+            <div className="col-md-4">
+              <div className="card">
+                <div className="card-body">
+                  <h3 className="card-title">CSS tricks that makes web designing easy</h3>
+                  <p className="card-text text-primary">Mar 22, 2017</p>
+                  <button className="btn btn-primary">Visit</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   );

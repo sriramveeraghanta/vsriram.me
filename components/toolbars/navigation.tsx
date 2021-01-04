@@ -1,49 +1,47 @@
-import React from 'react';
-// react bootstrap
-import { Nav } from 'react-bootstrap';
+import React, { FC } from 'react';
 // components
 import { ActiveLink } from 'components/elements';
 
-function NavigationToolbar() {
+const NavigationToolbar: FC = () => {
   return (
-    <Nav className="justify-content-center pt-4 pb-4" activeKey="/home">
-      <Nav.Item>
+    <ul className="nav justify-content-center">
+      <li className="nav-item">
         <ActiveLink href="/">
-          <Nav.Link className="main-nav">About</Nav.Link>
+          <a className="nav-link main-nav">About</a>
         </ActiveLink>
-      </Nav.Item>
-      <Nav.Item>
+      </li>
+      <li className="nav-item">
         <ActiveLink href="/skills">
-          <Nav.Link className="main-nav">Skills</Nav.Link>
+          <a className="nav-link main-nav">Skills</a>
         </ActiveLink>
-      </Nav.Item>
-      <Nav.Item>
+      </li>
+      <li className="nav-item">
         <ActiveLink href="/education">
-          <Nav.Link className="main-nav">Education</Nav.Link>
+          <a className="nav-link main-nav">Education</a>
         </ActiveLink>
-      </Nav.Item>
-      <Nav.Item>
+      </li>
+      <li className="nav-item">
         <ActiveLink href="/experience">
-          <Nav.Link className="main-nav">Experience</Nav.Link>
+          <a className="nav-link main-nav">Experience</a>
         </ActiveLink>
-      </Nav.Item>
-      <Nav.Item>
+      </li>
+      <li className="nav-item">
         <ActiveLink href="/work">
-          <Nav.Link className="main-nav">Work</Nav.Link>
+          <a className="nav-link main-nav">Work</a>
         </ActiveLink>
-      </Nav.Item>
-      <Nav.Item>
+      </li>
+      <li className="nav-item">
         <ActiveLink href="/blog">
-          <Nav.Link className="main-nav">Blog</Nav.Link>
+          <a className="nav-link main-nav">Blog</a>
         </ActiveLink>
-      </Nav.Item>
-      <Nav.Item>
+      </li>
+      <li className="nav-item">
         <ActiveLink href="/contact">
-          <Nav.Link className="main-nav">Contact</Nav.Link>
+          <a className="nav-link main-nav">Contact</a>
         </ActiveLink>
-      </Nav.Item>
-    </Nav>
+      </li>
+    </ul>
   );
-}
+};
 
 export default NavigationToolbar;

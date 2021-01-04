@@ -1,10 +1,11 @@
 import React from 'react';
 // next imports
+import { NextPage } from 'next';
 import Head from 'next/head';
 // components
 import { AboutView } from 'components/views';
 
-function HomePage() {
+const HomePage: NextPage = () => {
   return (
     <>
       <Head>
@@ -13,6 +14,6 @@ function HomePage() {
       <AboutView />
     </>
   );
-}
+};
 
 export default HomePage;

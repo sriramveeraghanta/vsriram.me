@@ -1,25 +1,23 @@
 import React, { FC } from 'react';
-// react bootstrap
-import { FormGroup, FormControl, Button } from 'react-bootstrap';
 
 const ContactForm: FC = () => {
   return (
     <form>
-      <FormGroup>
+      <div className="mb-3">
         <label>Name</label>
-        <FormControl type="text" />
-      </FormGroup>
-      <FormGroup>
+        <input type="text" className="form-control" name="name" />
+      </div>
+      <div className="mb-3">
         <label>Email</label>
-        <FormControl type="text" />
-      </FormGroup>
-      <FormGroup>
+        <input type="email" className="form-control" name="name" />
+      </div>
+      <div className="mb-3">
         <label>Message</label>
-        <FormControl as="textarea" />
-      </FormGroup>
-      <FormGroup>
-        <Button variant="primary">Submit</Button>
-      </FormGroup>
+        <textarea className="form-control" placeholder="Leave a comment here"></textarea>
+      </div>
+      <div className="mb-3">
+        <button className="btn btn-primary">Submit</button>
+      </div>
     </form>
   );
 };
