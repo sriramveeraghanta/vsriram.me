@@ -2,7 +2,12 @@ import React, { FC } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-const ActiveLink: FC = ({ href, children }: any) => {
+export interface IActiveLink {
+  href: string;
+  children: any;
+}
+
+const ActiveLink: FC<IActiveLink> = ({ href, children }) => {
   const router = useRouter();
 
   let className = children.props.className || '';

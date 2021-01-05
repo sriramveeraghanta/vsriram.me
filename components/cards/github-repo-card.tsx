@@ -2,8 +2,12 @@ import React, { FC } from 'react';
 // hooks
 import { useRequest } from 'lib/hooks';
 
-const GithubRepoCard: FC = props => {
-  const { data } = useRequest({ url: props.url });
+export interface IGithubRepoCard {
+  url: string;
+}
+
+const GithubRepoCard: FC<IGithubRepoCard> = ({ url }) => {
+  const { data } = useRequest<any>({ url });
 
   return (
     <div className="card">

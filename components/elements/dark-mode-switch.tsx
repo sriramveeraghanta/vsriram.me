@@ -7,7 +7,12 @@ const DarkModeSwitch: FC = () => {
   return (
     <div className="switch-container">
       <div className="form-check form-switch">
-        <input className="form-check-input" type="checkbox" onChange={darkMode.toggle} />
+        <input
+          className="form-check-input"
+          type="checkbox"
+          checked={darkMode.value}
+          onChange={darkMode.toggle}
+        />
       </div>
     </div>
   );
