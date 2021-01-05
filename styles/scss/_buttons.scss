@@ -20,3 +20,17 @@
   color: white;
   border-color: #fff;
 }
+
+.switch-container {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+
+  .form-check {
+    height: 20px;
+    .form-check-input {
+      width: 80px;
+      height: 40px;
+    }
+  }
+}

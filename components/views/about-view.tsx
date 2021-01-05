@@ -3,6 +3,22 @@ import React, { FC } from 'react';
 import { NavigationToolbar } from 'components/toolbars';
 // icons
 import { FaEnvelope, FaTwitter, FaLinkedin, FaGithub } from 'react-icons/fa';
+// framer motion
+import { motion } from 'framer-motion';
+
+const textVariant = {
+  hidden: {
+    scale: 0.8,
+    opacity: 0
+  },
+  visible: {
+    scale: 1,
+    opacity: 1,
+    transition: {
+      delay: 0.4
+    }
+  }
+};
 
 const AboutView: FC = () => {
   return (
@@ -11,10 +27,27 @@ const AboutView: FC = () => {
         <div className="container">
           <div className="row">
             <div className="col-12 col-sm-5 col-md-4 col-lg-4">
-              <img className="profile-image" src="/images/profile-pic.jpg" />
+              <motion.img
+                className="profile-image"
+                src="/images/profile-pic.jpg"
+                whileHover={{
+                  position: 'relative',
+                  zIndex: 1,
+                  background: 'white',
+                  scale: 1.2,
+                  transition: {
+                    duration: 0.2
+                  }
+                }}
+              />
             </div>
             <div className="col-12 col-sm-7 col-md-6 col-lg-5 d-flex">
-              <div className="align-self-center">
+              <motion.div
+                className="align-self-center"
+                initial="hidden"
+                animate="visible"
+                variants={textVariant}
+              >
                 <h1 className="title">Sriram Veeraghanta</h1>
                 <p className="desc">
                   Web Developer, Product Designer and Machine Learning Enthusiast.
@@ -62,7 +95,7 @@ const AboutView: FC = () => {
                     </a>
                   </li>
                 </ul>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -70,12 +103,17 @@ const AboutView: FC = () => {
           <NavigationToolbar />
         </div>
         <div className="container">
-          <p className="about-text">
+          <motion.p
+            className="about-text"
+            initial="hidden"
+            animate="visible"
+            variants={textVariant}
+          >
             Web Developer, Back-end Engineer, Product Designer, and Machine Learning Enthusiast. I
             had a good share of experience working with frameworks like Flask, Django, ReactJs,
             Vuejs. Designed products in various areas like E-learning, E-commerce, Event spaces, and
             Fintech. Focusing on building products using Machine Learning Algorithms.
-          </p>
+          </motion.p>
         </div>
       </section>
     </div>

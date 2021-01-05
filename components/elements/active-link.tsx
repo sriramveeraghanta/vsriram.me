@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { FC } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-const ActiveLink = ({ href, children }) => {
+const ActiveLink: FC = ({ href, children }: any) => {
   const router = useRouter();
 
   let className = children.props.className || '';

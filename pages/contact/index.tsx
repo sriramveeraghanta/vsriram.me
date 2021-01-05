@@ -1,12 +1,13 @@
 import React from 'react';
 // next imports
 import Head from 'next/head';
+import { NextPage } from 'next';
 // components
 import { ContactForm } from 'components/forms';
 // react-icons
 import { FaEnvelope, FaTwitter, FaGithub } from 'react-icons/fa';
 
-function ContactPage() {
+const ContactPage: NextPage = () => {
   return (
     <div>
       <Head>
@@ -39,6 +40,6 @@ function ContactPage() {
       </section>
     </div>
   );
-}
+};
 
 export default ContactPage;

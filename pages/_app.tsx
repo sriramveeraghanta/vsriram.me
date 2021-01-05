@@ -8,6 +8,9 @@ import 'config/axios.config';
 import SiteLayout from '../lib/site-layout';
 // app css
 import '../styles/app.scss';
+// framer motion
+import { AnimateSharedLayout } from 'framer-motion';
+import DarkModeSwitch from 'components/elements/dark-mode-switch';
 
 class MyApp extends App {
   render(): JSX.Element {
@@ -18,9 +21,14 @@ class MyApp extends App {
         <Head>
           <title>Sriram Veeraghanta</title>
         </Head>
-        <SiteLayout>
-          <Component {...pageProps} />
-        </SiteLayout>
+        <div className="relative-container">
+          <AnimateSharedLayout>
+            <SiteLayout>
+              <Component {...pageProps} />
+            </SiteLayout>
+          </AnimateSharedLayout>
+          <DarkModeSwitch />
+        </div>
       </>
     );
   }

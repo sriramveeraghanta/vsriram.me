@@ -3,8 +3,9 @@ import React from 'react';
 import Head from 'next/head';
 // components
 import { GithubRepoCard } from 'components/cards';
+import { NextPage } from 'next';
 
-function WorkPage() {
+const WorkPage: NextPage = () => {
   return (
     <div>
       <Head>
@@ -25,6 +26,6 @@ function WorkPage() {
       </section>
     </div>
   );
-}
+};
 
 export default WorkPage;

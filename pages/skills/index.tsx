@@ -13,7 +13,7 @@ const SkillsPage: FC = () => {
       <section className="section">
         <div className="container">
           <h3 className="text-center mb-4">
-            Languages I am in <FaHeart /> with
+            Languages I am in <FaHeart color="#dc3545" /> with
           </h3>
           <div className="row mb-5">
             <div className="col col-md-4">
@@ -282,7 +282,7 @@ const SkillsPage: FC = () => {
               </div>
             </div>
           </div>
-          <hr />
+          {/* <hr />
           <h3 className="text-center mb-4 mt-4">Deployment Platforms I use</h3>
           <div className="row">
             <div className="col-md-3">
@@ -405,7 +405,7 @@ const SkillsPage: FC = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
     </div>
