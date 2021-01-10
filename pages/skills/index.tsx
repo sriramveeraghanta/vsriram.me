@@ -73,6 +73,7 @@ const SkillsPage: FC = () => {
                       aria-valuenow={0}
                       aria-valuemin={0}
                       aria-valuemax={60}
+                      style={{ width: '60%' }}
                     ></div>
                   </div>
                   <p>
@@ -99,6 +100,7 @@ const SkillsPage: FC = () => {
                       aria-valuenow={0}
                       aria-valuemin={0}
                       aria-valuemax={100}
+                      style={{ width: '100%' }}
                     ></div>
                   </div>
                   <p>
@@ -123,6 +125,7 @@ const SkillsPage: FC = () => {
                       aria-valuenow={0}
                       aria-valuemin={0}
                       aria-valuemax={80}
+                      style={{ width: '80%' }}
                     ></div>
                   </div>
                   <p>
@@ -147,6 +150,7 @@ const SkillsPage: FC = () => {
                       aria-valuenow={0}
                       aria-valuemin={0}
                       aria-valuemax={50}
+                      style={{ width: '50%' }}
                     ></div>
                   </div>
                   <p>
@@ -165,6 +169,16 @@ const SkillsPage: FC = () => {
               <div className="skill-item">
                 <div className="text-center">
                   <h5>SSG like Jekyll, Gatsby</h5>
+                  <div className="progress skill-meter mb-2 mt-1">
+                    <div
+                      className="progress-bar"
+                      role="progressbar"
+                      aria-valuenow={0}
+                      aria-valuemin={0}
+                      aria-valuemax={100}
+                      style={{ width: '100%' }}
+                    ></div>
+                  </div>
                   <p>
                     Static Site Generate tools are really helpful when i am working on large static
                     web pages. Jekyll allows us to create reusable layouts which reduces your work
@@ -180,6 +194,16 @@ const SkillsPage: FC = () => {
               <div className="skill-item">
                 <div className="text-center">
                   <h5>React (SPA)</h5>
+                  <div className="progress skill-meter mb-2 mt-1">
+                    <div
+                      className="progress-bar"
+                      role="progressbar"
+                      aria-valuenow={0}
+                      aria-valuemin={0}
+                      aria-valuemax={100}
+                      style={{ width: '100%' }}
+                    ></div>
+                  </div>
                   <p>
                     When start building web application using javascript frameworks, angular was my
                     go to framework, because of the MVC architecture and huge support from the
@@ -194,6 +218,16 @@ const SkillsPage: FC = () => {
               <div className="skill-item">
                 <div className="text-center">
                   <h5>VueJS (SPA)</h5>
+                  <div className="progress skill-meter mb-2 mt-1">
+                    <div
+                      className="progress-bar"
+                      role="progressbar"
+                      aria-valuenow={0}
+                      aria-valuemin={0}
+                      aria-valuemax={90}
+                      style={{ width: '90%' }}
+                    ></div>
+                  </div>
                   <p>
                     When i am closing working on react, one thing that always worries me is, there
                     is a lot of javascript. Vue js really solved this using view templates. So i
@@ -212,6 +246,16 @@ const SkillsPage: FC = () => {
               <div className="skill-item">
                 <div className="text-center">
                   <h5>Express</h5>
+                  <div className="progress skill-meter mb-2 mt-1">
+                    <div
+                      className="progress-bar"
+                      role="progressbar"
+                      aria-valuenow={0}
+                      aria-valuemin={0}
+                      aria-valuemax={80}
+                      style={{ width: '80%' }}
+                    ></div>
+                  </div>
                   <p>
                     When i started experimenting with NodeJS Http server. Express framework really
                     draws my attention with the simplicity and ease of use. I always find
@@ -227,6 +271,16 @@ const SkillsPage: FC = () => {
               <div className="skill-item">
                 <div className="text-center">
                   <h5>Flask</h5>
+                  <div className="progress skill-meter mb-2 mt-1">
+                    <div
+                      className="progress-bar"
+                      role="progressbar"
+                      aria-valuenow={0}
+                      aria-valuemin={0}
+                      aria-valuemax={100}
+                      style={{ width: '75%' }}
+                    ></div>
+                  </div>
                   <p>
                     This the one of the best minimalistic web framework out there. No matter what
                     kind of database you use flask works flawlessly. I am great fan of the flask
@@ -243,6 +297,16 @@ const SkillsPage: FC = () => {
               <div className="skill-item">
                 <div className="text-center">
                   <h5>Static Site Hosting (Webpack)</h5>
+                  <div className="progress skill-meter mb-2 mt-1">
+                    <div
+                      className="progress-bar"
+                      role="progressbar"
+                      aria-valuenow={80}
+                      aria-valuemin={0}
+                      aria-valuemax={100}
+                      style={{ width: '70%' }}
+                    ></div>
+                  </div>
                   <p>
                     I always wanted to build my static website using the features of modern
                     javascript modules. Webpack and babel helps me to create a minimized bundle.
@@ -257,6 +321,16 @@ const SkillsPage: FC = () => {
               <div className="skill-item">
                 <div className="text-center">
                   <h5>Docker</h5>
+                  <div className="progress skill-meter mb-2 mt-1">
+                    <div
+                      className="progress-bar"
+                      role="progressbar"
+                      aria-valuenow={0}
+                      aria-valuemin={0}
+                      aria-valuemax={50}
+                      style={{ width: '70%' }}
+                    ></div>
+                  </div>
                   <p>
                     I am always fascinated about the operating system virtualization and
                     containerization. Docker is one of kind tool the allows me to run my application
@@ -271,6 +345,16 @@ const SkillsPage: FC = () => {
               <div className="skill-item">
                 <div className="text-center">
                   <h5>CI/CD Pipelines (Github Actions)</h5>
+                  <div className="progress skill-meter mb-2 mt-1">
+                    <div
+                      className="progress-bar"
+                      role="progressbar"
+                      aria-valuenow={0}
+                      aria-valuemin={0}
+                      aria-valuemax={100}
+                      style={{ width: '75%' }}
+                    ></div>
+                  </div>
                   <p>
                     When i am working with team i often run into some issues when i am pulling my
                     teammates code. Some times they push unstable code and sometime with broken test
