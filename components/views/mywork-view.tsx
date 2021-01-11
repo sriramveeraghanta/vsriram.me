@@ -1,7 +1,14 @@
 import React, { FC } from 'react';
 // react icons
-import { FaPhoenixFramework, FaNodeJs } from 'react-icons/fa';
-import { SiNextDotJs, SiDjango, SiNuxtDotJs, SiVueDotJs, SiGithub } from 'react-icons/si';
+import { FaPhoenixFramework, FaNodeJs, FaJava } from 'react-icons/fa';
+import {
+  SiNextDotJs,
+  SiDjango,
+  SiNuxtDotJs,
+  SiVueDotJs,
+  SiGithub,
+  SiAndroidstudio
+} from 'react-icons/si';
 
 const MyWorkView: FC = () => {
   return (
@@ -137,6 +144,30 @@ const MyWorkView: FC = () => {
             <span className="text-bold text-info">References: </span>
             <a
               href="https://github.com/sriramveeraghanta/collabcode"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <SiGithub /> Github
+            </a>
+          </p>
+        </article>
+
+        <article className="work-item">
+          <h5 className="text-primary">Github Clone Android App</h5>
+          <p className="mb-1">
+            A Simple Android Application using github APIs. In this application you can find the
+            github users using their username and find their profile, List of repositories owned by
+            the user and also starred repositories. Implemented a Tab Layout for display and
+            recycler view for rendering the repository cards list.
+          </p>
+          <p className="mb-1">
+            <span className="text-bold text-info">Technologies Used: </span>
+            <FaJava /> Java, <SiAndroidstudio /> Android Studio
+          </p>
+          <p className="mb-1">
+            <span className="text-bold text-info">References: </span>
+            <a
+              href="https://github.com/sriramveeraghanta/github-clone-android"
               target="_blank"
               rel="noreferrer"
             >
