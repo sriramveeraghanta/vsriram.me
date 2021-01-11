@@ -29,6 +29,18 @@ function BlogPage() {
                 </a>
               </article>
             </div>
+            <div className="col-md-4">
+              <article className="work-item">
+                <h5 className="text-secondary">How to Structure Large Scale NextJS Applications</h5>
+                <p className="text-bold">Coming soon...</p>
+              </article>
+            </div>
+            <div className="col-md-4">
+              <article className="work-item">
+                <h5 className="text-secondary">Common development Pitfalls working with NodeJS.</h5>
+                <p className="text-bold">Coming soon...</p>
+              </article>
+            </div>
           </div>
         </div>
       </section>
