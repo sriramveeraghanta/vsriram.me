@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Mono&family=Share+Tech+Mono&display=swap');
 
-// Custom Styles
+// variables
 @import './scss/variables';
+// Bootstrap Override
+@import '~bootstrap/scss/bootstrap';
+// Custom Styles
 @import './scss/global';
 @import './scss/buttons';
 @import './scss/grids';
@@ -9,6 +12,3 @@
 @import './scss/typography';
 @import './scss/profile';
 @import './scss/skills-page';
-
-// Bootstrap Override
-@import '~bootstrap/scss/bootstrap';

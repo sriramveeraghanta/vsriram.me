@@ -26,33 +26,35 @@ const AboutView: FC = () => {
       <section className="section">
         <div className="container">
           <div className="row">
-            <div className="col-12 col-sm-5 col-md-4 col-lg-4">
-              <motion.img
-                className="profile-image"
-                src="/images/profile-pic.jpg"
-                whileHover={{
-                  position: 'relative',
-                  zIndex: 1,
-                  background: 'white',
-                  scale: 1.2,
-                  transition: {
-                    duration: 0.2
-                  }
-                }}
-              />
+            <div className="col-12 col-sm-5 col-md-4 col-lg-4 d-flex">
+              <div className="align-self-center pt-4 pb-4">
+                <motion.img
+                  className="profile-image"
+                  src="/images/profile-pic.jpg"
+                  whileHover={{
+                    position: 'relative',
+                    zIndex: 1,
+                    background: 'white',
+                    scale: 1.2,
+                    transition: {
+                      duration: 0.2
+                    }
+                  }}
+                />
+              </div>
             </div>
             <div className="col-12 col-sm-7 col-md-6 col-lg-5 d-flex">
               <motion.div
-                className="align-self-center"
+                className="align-self-center pt-4 pb-4"
                 initial="hidden"
                 animate="visible"
                 variants={textVariant}
               >
-                <h1 className="title">Sriram Veeraghanta</h1>
-                <p className="desc">
+                <h1 className="title text-center text-sm-start">Sriram Veeraghanta</h1>
+                <p className="desc text-center text-sm-start">
                   Web Developer, Product Designer and Machine Learning Enthusiast.
                 </p>
-                <ul className="social-icons-list">
+                <ul className="social-icons-list justify-content-sm-start justify-content-center">
                   <li className="social-icons-item">
                     <a
                       className="social-icons-link"

@@ -11,7 +11,7 @@ const SiteLayout: FC = ({ children }) => {
   }
 
   return (
-    <div>
+    <div className="pt-4">
       <NavigationToolbar />
       {children}
     </div>

@@ -1,7 +1,20 @@
+:root {
+  /* Your default theme */
+  --background: #fcf8ec;
+  --foreground: #1a1919;
+}
+
+[data-theme='dark'] {
+  --background: #1a1919;
+  --foreground: #fcf8ec;
+}
+
 html,
 body {
   font-family: 'PT Mono', monospace !important;
   font-weight: 400 !important;
+  background: var(--background);
+  color: var(--foreground);
 }
 
 h1,
@@ -11,14 +24,4 @@ h4,
 h5,
 h6 {
   font-family: 'Share Tech Mono', monospace;
-}
-
-body.light-mode {
-  background: #fcf8ec !important;
-  color: #333;
-  transition: background-color 0.3s ease;
-}
-body.dark-mode {
-  background-color: #1a1919 !important;
-  color: #fcf8ec;
 }

@@ -16,7 +16,7 @@ const ContactPage: NextPage = () => {
       <section className="section">
         <div className="container">
           <div className="row">
-            <div className="col d-flex">
+            <div className="col-12 col-md-6 d-flex">
               <div className="align-self-center w-100">
                 <h5 className="social-link-item">
                   <a href="mailto:veeraghanta.sriram@gmail.com">
@@ -47,7 +47,8 @@ const ContactPage: NextPage = () => {
                 </h5>
               </div>
             </div>
-            <div className="col">
+            <div className="col-12 col-md-6">
+              <h3 className="text-primary mt-5 mb-5">Get In Touch</h3>
               <ContactForm />
             </div>
           </div>

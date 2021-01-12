@@ -50,11 +50,7 @@ const NavigationToolbar: FC = () => {
   return (
     <ul className="main-nav">
       {navigationList.map(({ title, path, color }, index) => (
-        <motion.li
-          key={index}
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-        >
+        <motion.li key={index}>
           <ActiveLink href={path}>
             <a style={{ color: router.pathname === path ? color : 'inherit' }}>{title}</a>
           </ActiveLink>

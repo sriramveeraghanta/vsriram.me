@@ -12,6 +12,8 @@ import '../styles/app.scss';
 import { AnimatePresence, motion } from 'framer-motion';
 // components
 import DarkModeSwitch from 'components/elements/dark-mode-switch';
+// themes
+import { ThemeProvider } from 'next-themes';
 
 class MyApp extends App {
   render(): JSX.Element {
@@ -25,26 +27,28 @@ class MyApp extends App {
 
     return (
       <>
-        <Head>
-          <title>Sriram Veeraghanta</title>
-        </Head>
-        <div className="relative-container">
-          <AnimatePresence>
+        <ThemeProvider>
+          <Head>
+            <title>Sriram Veeraghanta</title>
+          </Head>
+          <div className="relative-container">
             <SiteLayout>
-              <motion.div
-                transition={spring}
-                key={router.pathname}
-                initial={{ x: 300, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: -300, opacity: 0 }}
-                id="page-transition-container"
-              >
-                <Component {...pageProps} />
-              </motion.div>
+              <AnimatePresence>
+                <motion.div
+                  transition={spring}
+                  key={router.pathname}
+                  initial={{ x: 300, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  exit={{ x: -300, opacity: 0 }}
+                  id="page-transition-container"
+                >
+                  <Component {...pageProps} />
+                </motion.div>
+              </AnimatePresence>
             </SiteLayout>
-          </AnimatePresence>
-          <DarkModeSwitch />
-        </div>
+            <DarkModeSwitch />
+          </div>
+        </ThemeProvider>
       </>
     );
   }

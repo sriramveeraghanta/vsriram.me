@@ -1,18 +1,25 @@
 import React, { FC } from 'react';
-import useDarkMode from 'use-dark-mode';
+// react themes
+import { useTheme } from 'next-themes';
+// react icons
+import { FaSun, FaMoon } from 'react-icons/fa';
 
 const DarkModeSwitch: FC = () => {
-  const darkMode = useDarkMode(true);
+  const { theme, setTheme } = useTheme();
 
   return (
     <div className="switch-container">
-      <div className="form-check form-switch">
-        <input
-          className="form-check-input"
-          type="checkbox"
-          checked={darkMode.value}
-          onChange={darkMode.toggle}
-        />
+      <div>
+        {theme === 'light' && (
+          <button className="btn btn-theme-light" onClick={() => setTheme('dark')}>
+            <FaMoon />
+          </button>
+        )}
+        {theme === 'dark' && (
+          <button className="btn btn-theme-dark" onClick={() => setTheme('light')}>
+            <FaSun />
+          </button>
+        )}
       </div>
     </div>
   );
