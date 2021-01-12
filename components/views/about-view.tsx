@@ -54,6 +54,7 @@ const AboutView: FC = () => {
                 <p className="desc text-center text-sm-start">
                   Web Developer, Product Designer and Machine Learning Enthusiast.
                 </p>
+
                 <ul className="social-icons-list justify-content-sm-start justify-content-center">
                   <li className="social-icons-item">
                     <a
@@ -94,6 +95,16 @@ const AboutView: FC = () => {
                       rel="noreferrer"
                     >
                       <FaLinkedin />
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="social-icons-link btn btn-primary btn-sm btn-rounded"
+                      href="/resume-simple.pdf"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Download Resume
                     </a>
                   </li>
                 </ul>

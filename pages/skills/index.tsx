@@ -24,10 +24,7 @@ const SkillsPage: FC = () => {
                     <div
                       className="progress-bar"
                       role="progressbar"
-                      style={{ width: '90%' }}
-                      aria-valuenow={0}
-                      aria-valuemin={0}
-                      aria-valuemax={90}
+                      style={{ width: '100%' }}
                     ></div>
                   </div>
                   <p>
@@ -47,10 +44,7 @@ const SkillsPage: FC = () => {
                     <div
                       className="progress-bar"
                       role="progressbar"
-                      style={{ width: '80%' }}
-                      aria-valuenow={0}
-                      aria-valuemin={0}
-                      aria-valuemax={80}
+                      style={{ width: '100%' }}
                     ></div>
                   </div>
 
@@ -70,10 +64,7 @@ const SkillsPage: FC = () => {
                     <div
                       className="progress-bar"
                       role="progressbar"
-                      aria-valuenow={0}
-                      aria-valuemin={0}
-                      aria-valuemax={60}
-                      style={{ width: '60%' }}
+                      style={{ width: '100%' }}
                     ></div>
                   </div>
                   <p>
@@ -97,9 +88,6 @@ const SkillsPage: FC = () => {
                     <div
                       className="progress-bar"
                       role="progressbar"
-                      aria-valuenow={0}
-                      aria-valuemin={0}
-                      aria-valuemax={100}
                       style={{ width: '100%' }}
                     ></div>
                   </div>
@@ -122,10 +110,7 @@ const SkillsPage: FC = () => {
                     <div
                       className="progress-bar"
                       role="progressbar"
-                      aria-valuenow={0}
-                      aria-valuemin={0}
-                      aria-valuemax={80}
-                      style={{ width: '80%' }}
+                      style={{ width: '100%' }}
                     ></div>
                   </div>
                   <p>
@@ -147,10 +132,7 @@ const SkillsPage: FC = () => {
                     <div
                       className="progress-bar"
                       role="progressbar"
-                      aria-valuenow={0}
-                      aria-valuemin={0}
-                      aria-valuemax={50}
-                      style={{ width: '50%' }}
+                      style={{ width: '100%' }}
                     ></div>
                   </div>
                   <p>
@@ -173,9 +155,6 @@ const SkillsPage: FC = () => {
                     <div
                       className="progress-bar"
                       role="progressbar"
-                      aria-valuenow={0}
-                      aria-valuemin={0}
-                      aria-valuemax={100}
                       style={{ width: '100%' }}
                     ></div>
                   </div>
@@ -198,9 +177,6 @@ const SkillsPage: FC = () => {
                     <div
                       className="progress-bar"
                       role="progressbar"
-                      aria-valuenow={0}
-                      aria-valuemin={0}
-                      aria-valuemax={100}
                       style={{ width: '100%' }}
                     ></div>
                   </div>
@@ -222,10 +198,7 @@ const SkillsPage: FC = () => {
                     <div
                       className="progress-bar"
                       role="progressbar"
-                      aria-valuenow={0}
-                      aria-valuemin={0}
-                      aria-valuemax={90}
-                      style={{ width: '90%' }}
+                      style={{ width: '100%' }}
                     ></div>
                   </div>
                   <p>
@@ -250,10 +223,7 @@ const SkillsPage: FC = () => {
                     <div
                       className="progress-bar"
                       role="progressbar"
-                      aria-valuenow={0}
-                      aria-valuemin={0}
-                      aria-valuemax={80}
-                      style={{ width: '80%' }}
+                      style={{ width: '100%' }}
                     ></div>
                   </div>
                   <p>
@@ -275,10 +245,7 @@ const SkillsPage: FC = () => {
                     <div
                       className="progress-bar"
                       role="progressbar"
-                      aria-valuenow={0}
-                      aria-valuemin={0}
-                      aria-valuemax={100}
-                      style={{ width: '75%' }}
+                      style={{ width: '100%' }}
                     ></div>
                   </div>
                   <p>
@@ -301,10 +268,7 @@ const SkillsPage: FC = () => {
                     <div
                       className="progress-bar"
                       role="progressbar"
-                      aria-valuenow={80}
-                      aria-valuemin={0}
-                      aria-valuemax={100}
-                      style={{ width: '70%' }}
+                      style={{ width: '100%' }}
                     ></div>
                   </div>
                   <p>
@@ -325,10 +289,7 @@ const SkillsPage: FC = () => {
                     <div
                       className="progress-bar"
                       role="progressbar"
-                      aria-valuenow={0}
-                      aria-valuemin={0}
-                      aria-valuemax={50}
-                      style={{ width: '70%' }}
+                      style={{ width: '100%' }}
                     ></div>
                   </div>
                   <p>
@@ -349,10 +310,7 @@ const SkillsPage: FC = () => {
                     <div
                       className="progress-bar"
                       role="progressbar"
-                      aria-valuenow={0}
-                      aria-valuemin={0}
-                      aria-valuemax={100}
-                      style={{ width: '75%' }}
+                      style={{ width: '100%' }}
                     ></div>
                   </div>
                   <p>
