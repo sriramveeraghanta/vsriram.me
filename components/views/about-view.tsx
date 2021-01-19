@@ -117,15 +117,16 @@ const AboutView: FC = () => {
         </div>
         <div className="container">
           <motion.p
-            className="about-text"
+            className="about-text pl-4 pr-4"
             initial="hidden"
             animate="visible"
             variants={textVariant}
           >
-            Web Developer, Back-end Engineer, Product Designer, and Machine Learning Enthusiast. I
-            had a good share of experience working with frameworks like Flask, Django, ReactJs,
-            Vuejs. Designed products in various areas like E-learning, E-commerce, Event spaces, and
-            Fintech. Focusing on building products using Machine Learning Algorithms.
+            I am a Web Developer, Back-end Engineer, Product Designer, and Machine Learning
+            Enthusiast. I have 4 years of experience working with frameworks like Flask, Django,
+            Express, ReactJS, VueJS and AngularJS. Designed products in varied domains like
+            E-learning, E-commerce, Event spaces, and Fintech. Currently focusing on building
+            scalable products using Machine Learning Algorithms.
           </motion.p>
         </div>
       </section>

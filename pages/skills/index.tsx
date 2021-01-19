@@ -21,17 +21,13 @@ const SkillsPage: FC = () => {
                 <div className="text-center">
                   <h5>Javascript / NodeJS</h5>
                   <div className="progress skill-meter mb-2 mt-1 ">
-                    <div
-                      className="progress-bar"
-                      role="progressbar"
-                      style={{ width: '100%' }}
-                    ></div>
+                    <div className="progress-bar w-100" role="progressbar"></div>
                   </div>
                   <p>
-                    Javascript is the first programming language I fell in love with. I started
-                    learning Javascript as a student in my undergrad. The first application I built
-                    is a hangman game using HTML/CSS/JS. It excited me to explore more, by the end
-                    of my undergrad I started building full stack applications using NodeJS.
+                    I started learning Javascript in my Under-graduation and immediately fell in
+                    love with it. The very first application I built was a Hangman game using
+                    HTML/CSS/JS. It inspired me to explore further and by the end of my
+                    Under-graduation I started building full stack applications using NodeJS.
                   </p>
                 </div>
               </div>
@@ -41,17 +37,13 @@ const SkillsPage: FC = () => {
                 <div className="text-center">
                   <h5>Python</h5>
                   <div className="progress skill-meter mb-2 mt-1">
-                    <div
-                      className="progress-bar"
-                      role="progressbar"
-                      style={{ width: '100%' }}
-                    ></div>
+                    <div className="progress-bar w-100" role="progressbar"></div>
                   </div>
-
                   <p>
-                    A language which changed the way i wrote code. As a computer science student i
-                    am very passionate to learn new things. Python language helped me to explore my
-                    interests in the field of web development, Data Science and Machine Learning.
+                    Python enhanced my code programing abilities to a great extent. As a computer
+                    science student, I am very passionate to learn new technologies and Python
+                    helped me to explore my interests in the field of Web Development, Data Science
+                    and Machine Learning.
                   </p>
                 </div>
               </div>
@@ -61,17 +53,13 @@ const SkillsPage: FC = () => {
                 <div className="text-center">
                   <h5>Elixir</h5>
                   <div className="progress skill-meter mb-2 mt-1">
-                    <div
-                      className="progress-bar"
-                      role="progressbar"
-                      style={{ width: '100%' }}
-                    ></div>
+                    <div className="progress-bar w-100" role="progressbar"></div>
                   </div>
                   <p>
-                    It is the time when I started exploring functional programming languages, I
-                    started with Clojure and got scared of the syntactical sugar. Then i started
-                    learning elixir which helps me to understand how process isolation helps us to
-                    solve most complicated problems in less time using concurrency.
+                    When I was exploring functional programming languages, I started with Clojure
+                    which got me intimidated due to its syntactical sugar. So, I shifted to Elixir
+                    which helped me to understand how process isolation helps to solve the most
+                    complicated problems in lesser time using concurrency.
                   </p>
                 </div>
               </div>
@@ -85,11 +73,7 @@ const SkillsPage: FC = () => {
                 <div className="text-center">
                   <h5>NextJS</h5>
                   <div className="progress skill-meter mb-2 mt-1">
-                    <div
-                      className="progress-bar"
-                      role="progressbar"
-                      style={{ width: '100%' }}
-                    ></div>
+                    <div className="progress-bar w-100" role="progressbar"></div>
                   </div>
                   <p>
                     When i am in the hunt for the best tools to build highly scalable NodeJs
@@ -107,19 +91,15 @@ const SkillsPage: FC = () => {
                 <div className="text-center">
                   <h5>Django</h5>
                   <div className="progress skill-meter mb-2 mt-1">
-                    <div
-                      className="progress-bar"
-                      role="progressbar"
-                      style={{ width: '100%' }}
-                    ></div>
+                    <div className="progress-bar w-100" role="progressbar"></div>
                   </div>
                   <p>
-                    I believe Django is the perfect framework for building web applications and API
-                    Servers. With huge support of django community and the beauty of simplicity in
-                    framework gives me confidence to build large scale complex web applications with
-                    ease. Django rest framework takes it to one step further. Support for multiple
-                    Database Connectors, Easy Database Modeling, Builtin Migration Handling, Admin
-                    dashboard for a overview control made mew love this framework even more.
+                    I feel Django is a great framework for building web applications and API
+                    Servers. The beauty of Django is its supportive community and the simplicity of
+                    its framework which encouraged me to build large scale complex web applications.
+                    Django REST framework takes it to the next level. Support for multiple Database
+                    Connectors, Easy Database Modelling, Built-in Migration Handling, Admin
+                    dashboard for an overview control made this framework even more fascinating.
                   </p>
                 </div>
               </div>
@@ -129,17 +109,12 @@ const SkillsPage: FC = () => {
                 <div className="text-center">
                   <h5>Phoenix</h5>
                   <div className="progress skill-meter mb-2 mt-1">
-                    <div
-                      className="progress-bar"
-                      role="progressbar"
-                      style={{ width: '100%' }}
-                    ></div>
+                    <div className="progress-bar w-100" role="progressbar"></div>
                   </div>
                   <p>
-                    When i am looking for tool to create live dashboards, Phoenix live view
-                    attracted me to explore phoenix framework. This thing is a beauty, with the help
-                    of ecto i can create database models easily and channels can bring life to you
-                    frontend screens.
+                    When I was looking for a tool to create live dashboards, Phoenix live view
+                    interested me to explore its framework. With the help of Ecto, I created
+                    database models with ease and channels brought life to the frontend screens.
                   </p>
                 </div>
               </div>
@@ -152,19 +127,15 @@ const SkillsPage: FC = () => {
                 <div className="text-center">
                   <h5>SSG like Jekyll, Gatsby</h5>
                   <div className="progress skill-meter mb-2 mt-1">
-                    <div
-                      className="progress-bar"
-                      role="progressbar"
-                      style={{ width: '100%' }}
-                    ></div>
+                    <div className="progress-bar w-100" role="progressbar"></div>
                   </div>
                   <p>
-                    Static Site Generate tools are really helpful when i am working on large static
-                    web pages. Jekyll allows us to create reusable layouts which reduces your work
-                    and increases consistency across the website. As building modern day javascript
-                    frameworks are increasing the popular, Gatsby is one of the SSG tools using
-                    react, which make your website more intuitive using javascript actions. Also
-                    Gatsby support few plugins to Optimize your website for search engines.
+                    Static Site Generate tools are great while working on large static web pages.
+                    Jekyll allows to create reusable layouts which reduces repetitive work and
+                    increases consistency across the website. As building modern day Javascript
+                    frameworks is increasing in popularity, Gatsby is one of the SSG tools using
+                    React which makes websites more intuitive. Further, Gatsby supports plugins to
+                    support search engine optimization (SEO).
                   </p>
                 </div>
               </div>
@@ -174,18 +145,14 @@ const SkillsPage: FC = () => {
                 <div className="text-center">
                   <h5>React (SPA)</h5>
                   <div className="progress skill-meter mb-2 mt-1">
-                    <div
-                      className="progress-bar"
-                      role="progressbar"
-                      style={{ width: '100%' }}
-                    ></div>
+                    <div className="progress-bar w-100" role="progressbar"></div>
                   </div>
                   <p>
-                    When start building web application using javascript frameworks, angular was my
-                    go to framework, because of the MVC architecture and huge support from the
-                    community. But React changed everything, It made me focus on the views of the
-                    application and binding data using XHTTP requests makes my web application some
-                    customizable. The simplicity of the library made me fall in love with it.
+                    When I started building web applications using Javascript frameworks, Angular
+                    was my go-to framework because of its MVC architecture and huge support from the
+                    community. But React changed my perception. It made me focus on the application
+                    views and data binding using XHTTP requests with great customization
+                    capabilities. The simplicity of the library is my favorite.
                   </p>
                 </div>
               </div>
@@ -195,19 +162,14 @@ const SkillsPage: FC = () => {
                 <div className="text-center">
                   <h5>VueJS (SPA)</h5>
                   <div className="progress skill-meter mb-2 mt-1">
-                    <div
-                      className="progress-bar"
-                      role="progressbar"
-                      style={{ width: '100%' }}
-                    ></div>
+                    <div className="progress-bar w-100" role="progressbar"></div>
                   </div>
                   <p>
-                    When i am closing working on react, one thing that always worries me is, there
-                    is a lot of javascript. Vue js really solved this using view templates. So i
-                    quickly explored the documentation and loved. So far i can say Vue js has the
-                    best documentation if you compare with other javascript libraries. Smaller
-                    builds sizes and better performance than other frameworks makes me choose Vue
-                    over other.
+                    While working on React, the thing that bothered me was the amount of Javascript
+                    required. VueJS solved this issue with view templates. So, I explored the
+                    documentation and, in my experience, so far VueJS is better when compared with
+                    other Javascript libraries. Smaller build sizes and better performance makes me
+                    choose VueJS over others.
                   </p>
                 </div>
               </div>
@@ -220,19 +182,14 @@ const SkillsPage: FC = () => {
                 <div className="text-center">
                   <h5>Express</h5>
                   <div className="progress skill-meter mb-2 mt-1">
-                    <div
-                      className="progress-bar"
-                      role="progressbar"
-                      style={{ width: '100%' }}
-                    ></div>
+                    <div className="progress-bar w-100" role="progressbar"></div>
                   </div>
                   <p>
-                    When i started experimenting with NodeJS Http server. Express framework really
-                    draws my attention with the simplicity and ease of use. I always find
-                    difficulties working with relational databases and express. So my next option is
-                    going with NoSQL, had a great time working with express and mongodb. Build few
-                    application using MERN stack. I feel express is not suitable if you are building
-                    large scale projects.
+                    While experimenting with NodeJS Http server, Express framework really drew my
+                    attention with its simplicity. Working with relational databases and Express was
+                    a bit challenging to me. So, I chose NoSQL and enjoyed working with Express and
+                    MongoDB. I built a few applications using MERN stack. Though, I feel express is
+                    not suitable for building large scale projects.
                   </p>
                 </div>
               </div>
@@ -249,9 +206,9 @@ const SkillsPage: FC = () => {
                     ></div>
                   </div>
                   <p>
-                    This the one of the best minimalistic web framework out there. No matter what
-                    kind of database you use flask works flawlessly. I am great fan of the flask
-                    create armin ronacher. With a great support from python community flask is
+                    Flask is the one of the best minimalistic web frameworks out there. It works
+                    flawlessly irrespective of the type of database. I am a great fan of the flask
+                    creator - Armin Ronacher. With great support from the Python community, Flask is
                     always a great choice to get started.
                   </p>
                 </div>
@@ -265,18 +222,14 @@ const SkillsPage: FC = () => {
                 <div className="text-center">
                   <h5>Static Site Hosting (Webpack)</h5>
                   <div className="progress skill-meter mb-2 mt-1">
-                    <div
-                      className="progress-bar"
-                      role="progressbar"
-                      style={{ width: '100%' }}
-                    ></div>
+                    <div className="progress-bar w-100" role="progressbar"></div>
                   </div>
                   <p>
                     I always wanted to build my static website using the features of modern
-                    javascript modules. Webpack and babel helps me to create a minimized bundle.
-                    When i am building simple tic-tac-toa game using HTML, CSS and Javascript
-                    webpack help me to modularize my game logic and separate it from the HTML
-                    presentation.
+                    Javascript modules. Webpack and Babel are helpful in creating a minimized
+                    bundle. While I was building a tic-tac-toe game using HTML, CSS and Javascript,
+                    Webpack helped me to modularize the game logic and abstract it from the HTML
+                    presentation layer.
                   </p>
                 </div>
               </div>
@@ -286,18 +239,13 @@ const SkillsPage: FC = () => {
                 <div className="text-center">
                   <h5>Docker</h5>
                   <div className="progress skill-meter mb-2 mt-1">
-                    <div
-                      className="progress-bar"
-                      role="progressbar"
-                      style={{ width: '100%' }}
-                    ></div>
+                    <div className="progress-bar w-100" role="progressbar"></div>
                   </div>
                   <p>
-                    I am always fascinated about the operating system virtualization and
-                    containerization. Docker is one of kind tool the allows me to run my application
-                    on any platform. Using Docket Compose we can run multiple docket containers
-                    seamlessly. Once i understand the beauty of it really blew my mind how easily i
-                    can deploy my backend applications.
+                    Operating system virtualization and containerization fascinates me. Docker is a
+                    unique tool which allows to run applications on any platform. Docker Compose
+                    helps to run multiple Docker containers seamlessly. Once I understood its
+                    functionality, I was able to deploy the backend applications effortlessly.
                   </p>
                 </div>
               </div>
@@ -307,147 +255,19 @@ const SkillsPage: FC = () => {
                 <div className="text-center">
                   <h5>CI/CD Pipelines (Github Actions)</h5>
                   <div className="progress skill-meter mb-2 mt-1">
-                    <div
-                      className="progress-bar"
-                      role="progressbar"
-                      style={{ width: '100%' }}
-                    ></div>
+                    <div className="progress-bar w-100" role="progressbar"></div>
                   </div>
                   <p>
-                    When i am working with team i often run into some issues when i am pulling my
-                    teammates code. Some times they push unstable code and sometime with broken test
-                    cases. Continuos Integration made it easy to verify my teams work using workflow
-                    checks. Continuos Deployment helps me to deploy my application automatically
-                    after my checks are passed.
+                    When I am working with my team, we often run into issues while pulling each
+                    other’s code. Sometimes, unstable code and broken test cases gets checked-in
+                    inadvertently. Continuous Integration (CI) made it easy to verify my teams work
+                    using workflow checks. Continuous Deployment (CD) helps to deploy applications
+                    automatically after the checks are passed.
                   </p>
                 </div>
               </div>
             </div>
           </div>
-          {/* <hr />
-          <h3 className="text-center mb-4 mt-4">Deployment Platforms I use</h3>
-          <div className="row">
-            <div className="col-md-3">
-              <div className="skill-item">
-                <div className="text-center">
-                  <h5>Heroku</h5>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-3">
-              <div className="skill-item">
-                <div className="text-center">
-                  <h5>Google Cloud</h5>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-3">
-              <div className="skill-item">
-                <div className="text-center">
-                  <h5>AWS</h5>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-3">
-              <div className="skill-item">
-                <div className="text-center">
-                  <h5>Serverless Hosting (Vercel / Netlify)</h5>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <hr />
-          <h3 className="text-center mb-4 mt-4">
-            Tools I use for Data Aggregation and Data Analysis
-          </h3>
-          <div className="row">
-            <div className="col-md-4">
-              <div className="skill-item">
-                <div className="text-center">
-                  <h5>Tabula</h5>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="skill-item">
-                <div className="text-center">
-                  <h5>Numpy</h5>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="skill-item">
-                <div className="text-center">
-                  <h5>Pandas</h5>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <hr />
-          <h3 className="text-center mb-4 mt-4">
-            Tools I use for Machine Learning and Deep Learning
-          </h3>
-          <div className="row">
-            <div className="col-md-6">
-              <div className="skill-item">
-                <div className="text-center">
-                  <h5>Scikit Learn</h5>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6">
-              <div className="skill-item">
-                <div className="text-center">
-                  <h5>Tensorflow / TensorflowJS</h5>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div> */}
         </div>
       </section>
     </div>
