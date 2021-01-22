@@ -19,9 +19,10 @@ const MyWorkView: FC = () => {
         <article className="work-item">
           <h5 className="text-primary">LiberoMeet</h5>
           <p className="mb-1">
-            It is a video conferencing application using webrtc. Creating events and meetings around
-            the conference rooms. It is a fully functional virtual meeting tool like GoogleMeet and
-            Zoom with features like chat, notes and whiteboard inside the video room.
+            LiberoMeet is a video conferencing application using <b>WEBRTC</b>. Enables users to
+            create events and meetings in the conference rooms. This is a fully functional virtual
+            meeting tool like GoogleMeet and Zoom with features like chat, notes and whiteboard
+            inside the video room.
           </p>
           <p className="mb-1">
             <span className="text-bold text-info">Technologies Used: </span>
@@ -42,9 +43,9 @@ const MyWorkView: FC = () => {
         <article className="work-item">
           <h5 className="text-primary">{`AssetMatch - L'oreal Paris`}</h5>
           <p className="mb-1">
-            An image matching application using google vision api. Designed a frontend application
-            to upload image assets to match over the web using vision apis. Displaying results in
-            the user dashboard with the data retrieved from vision api.
+            AssetMatch is an image matching application using Google vision API. Designed a
+            front-end application to upload image assets to match over the web using vision APIs.
+            User dashboard shows the matching results from the data retrieved.
           </p>
           <p className="mb-1">
             <span className="text-bold text-info">Technologies Used: </span>
@@ -54,17 +55,14 @@ const MyWorkView: FC = () => {
             <span className="text-bold text-info">Team Details: </span>
             Project Architect and Developer working alone.
           </p>
-          {/* <p className="mb-1">
-            <span className="text-bold text-info">References: </span>
-            <a href="https://liberomeet.io/">https://liberomeet.io/</a>
-          </p> */}
         </article>
 
         <article className="work-item">
           <h5 className="text-primary">KeatsApp</h5>
           <p className="mb-1">
-            An interactive learning application for kids to learn to programme. Creating a learning
-            environment for kids with attractive challenges using different learning methods.
+            KeatsApp is an interactive learning application for kids to learn programming. It
+            provides an intuitive learning environment for kids with attractive challenges using
+            different learning methods.
           </p>
           <p className="mb-1">
             <span className="text-bold text-info">Technologies Used: </span>
@@ -85,8 +83,8 @@ const MyWorkView: FC = () => {
         <article className="work-item">
           <h5 className="text-primary">SATnPaper</h5>
           <p className="mb-1">
-            SATnPaper is a premium online platform for Indian students aspiring for undergraduate
-            admissions to US colleges by training them for the ACT and SAT exam using mock tests.
+            SATnPaper is a premium online platform for Indian students aspiring undergraduate
+            admissions to US colleges by training them for the ACT and SAT exams using mock tests.
           </p>
           <p className="mb-1">
             <span className="text-bold text-info">Technologies Used: </span>
@@ -107,9 +105,9 @@ const MyWorkView: FC = () => {
         <article className="work-item">
           <h5 className="text-primary">Crate</h5>
           <p className="mb-1">
-            Providing interface and secure permission for users to access files locally using a
-            local server that was deployed and tested in college. Working on converting this project
-            into an NPM module for better accessibility.
+            Crate provides user interface and secure permissions for the users to access files
+            locally using a local server that was deployed and tested in the college. Currently
+            working on converting this project into an NPM module for better accessibility.
           </p>
           <p className="mb-1">
             <span className="text-bold text-info">Technologies Used: </span>
@@ -133,8 +131,7 @@ const MyWorkView: FC = () => {
           <h5 className="text-primary">Collabcode</h5>
           <p className="mb-1">
             Collaborative online text editor with syntax highlighter. Each user is provided with a
-            random workspace that can be shared with others for collaboration. Currently refactoring
-            the project Conflict Free Replicated Data Types.
+            separate workspace that can be shared with others for collaboration.
           </p>
           <p className="mb-1">
             <span className="text-bold text-info">Technologies Used: </span>
@@ -155,10 +152,10 @@ const MyWorkView: FC = () => {
         <article className="work-item">
           <h5 className="text-primary">Github Clone Android App</h5>
           <p className="mb-1">
-            A Simple Android Application using github APIs. In this application you can find the
-            github users using their username and find their profile, List of repositories owned by
-            the user and also starred repositories. Implemented a Tab Layout for display and
-            recycler view for rendering the repository cards list.
+            An Android Application using Github APIs. It enables to find the Github users using
+            their username and retrieve their profile, list of repositories owned and starred
+            repositories. Implemented a tab layout to display and recycler view for rendering the
+            repository cards list.
           </p>
           <p className="mb-1">
             <span className="text-bold text-info">Technologies Used: </span>

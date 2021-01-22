@@ -14,17 +14,17 @@ const ExperienceView: FC = () => {
           <ul>
             <li>
               Building scalable fintech applications, designing interactive user interfaces using
-              frameworks like NextJS, AngularJS.
+              frameworks like NextJS and AngularJS.
             </li>
             <li>Creating REST APIs using Laravel and Django frameworks.</li>
             <li>
-              Handling project architectures, implementing design methodologies that improves the
+              Handling project architectures, implementing design methodologies improving the
               developer experience and product workflows.
             </li>
             <li>
-              Development, Deployment and Maintenance of multiple project. Handling frontend
-              applications, creating REST APIs and deploying web applications on platforms like AWS,
-              GCP and Digital Ocean are some of the core responsibilities.
+              Development, Deployment and Maintenance of multiple projects. Core responsibilities
+              include handling frontend applications, deploying web applications on platforms like
+              AWS, GCP and Digital Ocean.
             </li>
           </ul>
         </article>
@@ -37,20 +37,19 @@ const ExperienceView: FC = () => {
           </p>
           <p className="float-right text-info">Hyderabad, India</p>
           <ul>
+            <li>Organizing and Managing multiple teams and projects at the same time.</li>
+            <li>Created product workflows, user stories around the products.</li>
             <li>
-              Organize and Manage multiple teams and handle multiple projects at the same time.
+              Effectively conducted scrum team meetings and client meetings ensuring all teams work
+              together towards a common goal.
             </li>
             <li>
-              Create product workflows, user stories around the products, Handle scrum meetings,
-              handle client meetings and make sure all teams work together for a common goal.
+              Improving developer experience, implementing design methodologies and handling
+              deployments are some of the core responsibilities.
             </li>
             <li>
-              Improve developer experience, Implementing design methodologies and handling
-              deployments are some of the core responsibilities i have handled.
-            </li>
-            <li>
-              Creating continuous integration pipelines for automated testing and continuous
-              deployment pipeline are some of my core skills that helped the company a lot.
+              Created Continuous Integration(CI) pipelines for automated testing and Continuous
+              Deployment(CD) pipelines greatly helped the team to deliver robust solutions.
             </li>
           </ul>
         </article>
@@ -67,14 +66,15 @@ const ExperienceView: FC = () => {
               Design and development of progressive web applications and single-page applications.
             </li>
             <li>Building interactive applications for both web and mobile using REST APIs.</li>
-            <li>Engineering Lead for products like Keats, SATnPaper, Onto, Hoppercamp.</li>
             <li>
-              Product Design and UI/UX design lead. Crafted design principles and programming
-              practices internal to the company.
+              Served as an Engineering Lead for products - Keats, SATnPaper, Onto, Hoppercamp.
             </li>
             <li>
-              Trained few interns and full-time employees on web designing and javascript
-              frameworks.
+              As a Product and UI/UX design Lead, I curated design principles and programming
+              practices for the company.
+            </li>
+            <li>
+              Trained interns and full-time employees on Web Designing and Javascript frameworks.
             </li>
           </ul>
         </article>

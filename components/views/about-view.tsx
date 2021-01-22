@@ -31,6 +31,7 @@ const AboutView: FC = () => {
                 <motion.img
                   className="profile-image"
                   src="/images/profile-pic.jpg"
+                  alt="profile-image-not-found"
                   whileHover={{
                     position: 'relative',
                     zIndex: 1,
