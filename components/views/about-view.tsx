@@ -30,7 +30,7 @@ const AboutView: FC = () => {
               <div className="align-self-center pt-4 pb-4">
                 <motion.img
                   className="profile-image"
-                  src="/images/profile-pic.jpg"
+                  src="/images/profile.webp"
                   alt="profile-image-not-found"
                   whileHover={{
                     position: 'relative',
