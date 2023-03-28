@@ -1,6 +1,6 @@
-import React, { FC } from 'react';
+import React, { FC } from "react";
 // hooks
-import { useRequest } from 'lib/hooks';
+import { useRequest } from "hooks";
 
 export interface IGithubRepoCard {
   url: string;
