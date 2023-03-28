@@ -1,47 +1,52 @@
-import useSWR, { ConfigInterface, responseInterface } from 'swr';
-import axios, { AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios';
+import useSWR, { SWRConfiguration, SWRResponse } from "swr";
+import axios, { AxiosRequestConfig, AxiosResponse, AxiosError } from "axios";
 
 export type GetRequest = AxiosRequestConfig | null;
 
 interface Return<Data, Error>
   extends Pick<
-    responseInterface<AxiosResponse<Data>, AxiosError<Error>>,
-    'isValidating' | 'revalidate' | 'error' | 'mutate'
+    SWRResponse<AxiosResponse<Data>, AxiosError<Error>>,
+    "isValidating" | "error" | "mutate"
   > {
   data: Data | undefined;
   response: AxiosResponse<Data> | undefined;
 }
 
 export interface Config<Data = unknown, Error = unknown>
-  extends Omit<ConfigInterface<AxiosResponse<Data>, AxiosError<Error>>, 'initialData'> {
-  initialData?: Data;
+  extends Omit<
+    SWRConfiguration<AxiosResponse<Data>, AxiosError<Error>>,
+    "fallbackData"
+  > {
+  fallbackData?: Data;
 }
 
 export default function useRequest<Data = unknown, Error = unknown>(
   request: GetRequest,
-  { initialData, ...config }: Config<Data, Error> = {}
+  { fallbackData, ...config }: Config<Data, Error> = {}
 ): Return<Data, Error> {
-  const { data: response, error, isValidating, revalidate, mutate } = useSWR<
-    AxiosResponse<Data>,
-    AxiosError<Error>
-  >(
+  const {
+    data: response,
+    error,
+    isValidating,
+    mutate,
+  } = useSWR<any>(
     request && JSON.stringify(request),
     /**
      * NOTE: Typescript thinks `request` can be `null` here, but the fetcher
      * function is actually only called by `useSWR` when it isn't.
      */
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    () => axios(request!),
+    () => axios.request<Data>(request!),
     {
       ...config,
-      initialData: initialData && {
+      fallbackData: fallbackData && {
         status: 200,
-        statusText: 'InitialData',
+        statusText: "InitialData",
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         config: request!,
         headers: {},
-        data: initialData
-      }
+        data: fallbackData,
+      },
     }
   );
 
@@ -50,7 +55,6 @@ export default function useRequest<Data = unknown, Error = unknown>(
     response,
     error,
     isValidating,
-    revalidate,
-    mutate
+    mutate,
   };
 }
