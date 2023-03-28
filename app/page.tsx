@@ -20,7 +20,7 @@ export default async function HomePage() {
                 placeholder="blur"
               />
             </div>
-            <div className=" flex flex-1 items-center">
+            <div className=" flex flex-2 items-center">
               <div>
                 <h1 className="font-bold text-3xl font-serif">{FULL_NAME}</h1>
                 <p className="my-2 max-w-[460px]">{ABOUT}</p>
