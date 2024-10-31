@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: "Sriram Veeraghanta",
     images: [
       {
-        url: "https://vsriram.me/images/profile.webp",
+        url: "https://vsriram.me/images/profile.jpg",
         width: 1920,
         height: 1080,
       },

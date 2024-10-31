@@ -1,4 +1,4 @@
-import { EnvelopeIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
 // components
 import { GitHubIcon, TwitterIcon, LinkedInIcon } from "components/icons";
 // lib
@@ -10,14 +10,15 @@ export default async function HomePage() {
   return (
     <section className="py-20">
       <div className="flex justify-center">
-        <div className="flex flex-col w-[70%]">
+        <div className="flex flex-col w-[64%]">
           <div className="flex mb-8">
             <div className="flex flex-1 justify-center">
-              <img
+              <Image
                 alt={FULL_NAME}
-                className="rounded-full w-60 h-auto"
-                src="/images/profile.webp"
-                placeholder="blur"
+                className="rounded-full"
+                src="/images/profile.jpg"
+                width={255}
+                height={255}
               />
             </div>
             <div className=" flex flex-2 items-center">

@@ -1,9 +1,10 @@
-import { Bars3Icon } from "@heroicons/react/24/outline";
+import { Menu } from "lucide-react";
 
 const navigation = [
   { name: "About", href: "/" },
-  { name: "Work", href: "/work" },
-  { name: "Blog", href: "/blog" },
+  { name: "Playlists", href: "/playlists" },
+  // { name: "Work", href: "/work" },
+  // { name: "Blog", href: "/blog" },
 ];
 
 export const Navbar = () => {
@@ -20,7 +21,7 @@ export const Navbar = () => {
             // onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
-            <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+            <Menu />
           </button>
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
