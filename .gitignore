@@ -34,4 +34,4 @@ yarn-error.log*
 /.now/
 
 # package manager
-package-lock.json
+package-lock.json.superpowers/
