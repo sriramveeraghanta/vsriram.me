@@ -27,18 +27,18 @@ Out of scope:
 
 ## Architecture
 
-| Concern        | Choice                                                                 |
-| -------------- | ---------------------------------------------------------------------- |
-| Framework      | Astro (latest), `output: 'static'`                                     |
-| Styling        | Tailwind CSS via `@astrojs/tailwind`, dark-only                        |
-| Content        | Astro Content Collections with Zod schemas                             |
-| Writing format | MDX via `@astrojs/mdx`, code highlighting via Shiki                    |
-| Fonts          | Self-hosted: Source Serif 4 (body), Inter (UI), JetBrains Mono (code)  |
-| Icons          | `lucide-astro`                                                         |
-| Package mgr    | pnpm                                                                   |
-| Node           | 20 (pinned via `.nvmrc`)                                               |
-| Hosting        | Cloudflare Pages, custom domain `vsriram.me`                           |
-| CI             | GitHub Action: install → astro check → build; Lighthouse CI on PRs     |
+| Concern        | Choice                                                                |
+| -------------- | --------------------------------------------------------------------- |
+| Framework      | Astro (latest), `output: 'static'`                                    |
+| Styling        | Tailwind CSS via `@astrojs/tailwind`, dark-only                       |
+| Content        | Astro Content Collections with Zod schemas                            |
+| Writing format | MDX via `@astrojs/mdx`, code highlighting via Shiki                   |
+| Fonts          | Self-hosted: Source Serif 4 (body), Inter (UI), JetBrains Mono (code) |
+| Icons          | `lucide-astro`                                                        |
+| Package mgr    | pnpm                                                                  |
+| Node           | 20 (pinned via `.nvmrc`)                                              |
+| Hosting        | Cloudflare Pages, custom domain `vsriram.me`                          |
+| CI             | GitHub Action: install → astro check → build; Lighthouse CI on PRs    |
 
 ## Pages & routes
 
@@ -62,12 +62,12 @@ Defined in `src/content/config.ts` with Zod schemas. Each collection has a typed
 ### `writing` (MDX)
 
 ```yaml
-title: string              # required
-description: string        # required — used in index, RSS, OG tags
-publishedAt: date          # required
-updatedAt: date            # optional
-draft: boolean             # default false
-tags: string[]             # optional
+title: string # required
+description: string # required — used in index, RSS, OG tags
+publishedAt: date # required
+updatedAt: date # optional
+draft: boolean # default false
+tags: string[] # optional
 ```
 
 Sort: `publishedAt` desc. Drafts filtered out in prod via `import.meta.env.PROD`.
@@ -75,13 +75,13 @@ Sort: `publishedAt` desc. Drafts filtered out in prod via `import.meta.env.PROD`
 ### `work` (Markdown)
 
 ```yaml
-company: string            # required
-role: string               # required
-startDate: string          # required, format "YYYY-MM"
-endDate: string | null     # null = current
-location: string           # optional
-url: string                # optional (company link)
-order: number              # required — explicit ordering, lower = more recent
+company: string # required
+role: string # required
+startDate: string # required, format "YYYY-MM"
+endDate: string | null # null = current
+location: string # optional
+url: string # optional (company link)
+order: number # required — explicit ordering, lower = more recent
 ```
 
 Sort: by `order` asc. Body is Markdown describing responsibilities.
@@ -89,10 +89,10 @@ Sort: by `order` asc. Body is Markdown describing responsibilities.
 ### `playlists` (Markdown)
 
 ```yaml
-title: string              # required
-spotifyId: string          # required — Spotify playlist ID, not full URL
-description: string        # optional
-addedAt: date              # required
+title: string # required
+spotifyId: string # required — Spotify playlist ID, not full URL
+description: string # optional
+addedAt: date # required
 ```
 
 Sort: `addedAt` desc. Body unused (optional commentary).
@@ -144,18 +144,18 @@ Each component does one thing. Layouts don't know about post-specific styling; c
 
 ### Color tokens (Tailwind theme + CSS vars)
 
-| Token         | Value     | Use                                |
-| ------------- | --------- | ---------------------------------- |
-| `bg`          | `#0e0e0e` | Page background                    |
-| `bg-soft`     | `#111111` | Subtle surface, footer             |
-| `border`      | `#2a2a2a` | Hairlines, card edges              |
-| `border-soft` | `#1f1f1f` | Inner separators                   |
-| `text`        | `#e8e6e3` | Body, headings                     |
-| `text-2`      | `#c9c6c2` | Lede                               |
-| `text-3`      | `#a8a6a3` | Secondary body                     |
-| `muted`       | `#888888` | Meta, inactive nav                 |
-| `muted-2`     | `#666666` | Dates, footnotes                   |
-| `accent`      | `#ff5722` | Orange — used sparingly            |
+| Token         | Value     | Use                     |
+| ------------- | --------- | ----------------------- |
+| `bg`          | `#0e0e0e` | Page background         |
+| `bg-soft`     | `#111111` | Subtle surface, footer  |
+| `border`      | `#2a2a2a` | Hairlines, card edges   |
+| `border-soft` | `#1f1f1f` | Inner separators        |
+| `text`        | `#e8e6e3` | Body, headings          |
+| `text-2`      | `#c9c6c2` | Lede                    |
+| `text-3`      | `#a8a6a3` | Secondary body          |
+| `muted`       | `#888888` | Meta, inactive nav      |
+| `muted-2`     | `#666666` | Dates, footnotes        |
+| `accent`      | `#ff5722` | Orange — used sparingly |
 
 ### Typography
 
@@ -206,14 +206,14 @@ It must **not** appear on body links, large-area borders, or backgrounds.
 
 ### Scripts (`package.json`)
 
-| Script           | Command                  |
-| ---------------- | ------------------------ |
-| `pnpm dev`       | `astro dev`              |
-| `pnpm build`     | `astro build`            |
-| `pnpm preview`   | `astro preview`          |
-| `pnpm check`     | `astro check`            |
-| `pnpm format`    | `prettier --write .`     |
-| `pnpm lint`      | `eslint .`               |
+| Script         | Command              |
+| -------------- | -------------------- |
+| `pnpm dev`     | `astro dev`          |
+| `pnpm build`   | `astro build`        |
+| `pnpm preview` | `astro preview`      |
+| `pnpm check`   | `astro check`        |
+| `pnpm format`  | `prettier --write .` |
+| `pnpm lint`    | `eslint .`           |
 
 ### Cloudflare Pages
 
