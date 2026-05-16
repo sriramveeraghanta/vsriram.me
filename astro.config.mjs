@@ -7,11 +7,7 @@ export default defineConfig({
   site: 'https://vsriram.me',
   output: 'static',
   trailingSlash: 'never',
-  integrations: [
-    tailwind({ applyBaseStyles: false }),
-    mdx(),
-    sitemap(),
-  ],
+  integrations: [tailwind({ applyBaseStyles: false }), mdx(), sitemap()],
   markdown: {
     shikiConfig: {
       theme: 'github-dark-dimmed',
