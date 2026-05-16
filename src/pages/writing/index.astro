@@ -1,0 +1,49 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Eyebrow from '~/components/Eyebrow.astro';
+import PostCard from '~/components/PostCard.astro';
+import { getWritingPosts, groupWritingByYear } from '~/lib/collections';
+
+const posts = await getWritingPosts();
+const grouped = Array.from(groupWritingByYear(posts).entries()).sort(
+  (a, b) => b[0] - a[0],
+);
+---
+
+<BaseLayout title="Writing" description="Essays and notes on engineering, systems, and teams.">
+  <section class="pt-4">
+    <Eyebrow>Essays &amp; Notes</Eyebrow>
+    <h1 class="mt-4 font-serif text-[clamp(28px,5vw,38px)] font-medium leading-[1.08] tracking-tight">
+      Writing
+    </h1>
+    <p class="mt-4 max-w-[560px] font-serif text-[15px] leading-[1.6] text-text-3">
+      Notes on distributed systems, open source, and the craft of building software at scale.
+    </p>
+  </section>
+
+  <section class="mt-10">
+    {
+      posts.length === 0 ? (
+        <p class="font-serif text-[15px] italic text-muted">No posts yet.</p>
+      ) : (
+        grouped.map(([year, entries]) => (
+          <div class="mt-8 first:mt-0">
+            <p class="font-sans text-[10px] uppercase tracking-[0.22em] text-muted-2">
+              {year}
+            </p>
+            <div class="mt-2">
+              {entries.map((post) => (
+                <PostCard
+                  slug={post.id}
+                  title={post.data.title}
+                  description={post.data.description}
+                  publishedAt={post.data.publishedAt}
+                />
+              ))}
+            </div>
+          </div>
+        ))
+      )
+    }
+  </section>
+</BaseLayout>
