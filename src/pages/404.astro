@@ -1,0 +1,22 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Eyebrow from '~/components/Eyebrow.astro';
+---
+
+<BaseLayout title="404" description="Page not found.">
+  <section class="pt-12 text-center">
+    <Eyebrow class="!text-muted-2">Error 404</Eyebrow>
+    <h1 class="mt-4 font-serif text-[clamp(36px,8vw,72px)] font-medium leading-none tracking-tight">
+      Not <em class="font-medium italic text-accent">here</em>.
+    </h1>
+    <p class="mx-auto mt-6 max-w-[420px] font-serif text-[15px] leading-[1.6] text-text-3">
+      The page you're looking for doesn't exist — or it moved when the site was rebuilt.
+    </p>
+    <a
+      href="/"
+      class="mt-8 inline-block font-sans text-[12px] uppercase tracking-[0.16em] text-muted transition-colors duration-150 hover:text-accent"
+    >
+      ← Back to home
+    </a>
+  </section>
+</BaseLayout>
