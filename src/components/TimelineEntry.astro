@@ -1,0 +1,53 @@
+---
+import { formatWorkDateRange } from '~/lib/collections';
+
+interface Props {
+  company: string;
+  role: string;
+  startDate: string;
+  endDate: string | null;
+  location?: string;
+  url?: string;
+}
+
+const { company, role, startDate, endDate, location, url } = Astro.props;
+const dateRange = formatWorkDateRange(startDate, endDate);
+const current = endDate === null;
+---
+
+<article class="grid grid-cols-1 gap-2 border-b border-border-soft py-7 sm:grid-cols-[180px_1fr]">
+  <div class="font-sans text-[12px] uppercase tracking-[0.14em] text-muted-2">
+    {dateRange}
+    {current && <span class="ml-2 text-accent">●</span>}
+  </div>
+
+  <div>
+    <h2 class="font-serif text-[20px] font-medium leading-tight text-text">
+      {role}
+      <span class="text-muted"> · </span>
+      {
+        url ? (
+          <a
+            href={url}
+            target="_blank"
+            rel="noreferrer"
+            class="text-text-2 underline decoration-border decoration-1 underline-offset-4 transition-colors duration-150 hover:text-accent hover:decoration-accent"
+          >
+            {company}
+          </a>
+        ) : (
+          <span class="text-text-2">{company}</span>
+        )
+      }
+    </h2>
+    {
+      location && (
+        <p class="mt-1 font-sans text-[12px] italic text-muted-2">{location}</p>
+      )
+    }
+
+    <div class="prose-invert prose mt-3 max-w-none font-serif text-[15px] leading-[1.65] text-text-3">
+      <slot />
+    </div>
+  </div>
+</article>

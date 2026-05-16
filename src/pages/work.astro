@@ -1,0 +1,41 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Eyebrow from '~/components/Eyebrow.astro';
+import TimelineEntry from '~/components/TimelineEntry.astro';
+import { getWorkEntries } from '~/lib/collections';
+import { render } from 'astro:content';
+
+const entries = await getWorkEntries();
+---
+
+<BaseLayout title="Work" description="Career timeline.">
+  <section class="pt-4">
+    <Eyebrow>Career</Eyebrow>
+    <h1 class="mt-4 font-serif text-[clamp(28px,5vw,38px)] font-medium leading-[1.08] tracking-tight">
+      Work
+    </h1>
+    <p class="mt-4 max-w-[560px] font-serif text-[15px] leading-[1.6] text-text-3">
+      A timeline of the roles, teams, and problems I've worked on.
+    </p>
+  </section>
+
+  <section class="mt-10">
+    {
+      entries.map(async (entry) => {
+        const { Content } = await render(entry);
+        return (
+          <TimelineEntry
+            company={entry.data.company}
+            role={entry.data.role}
+            startDate={entry.data.startDate}
+            endDate={entry.data.endDate}
+            location={entry.data.location}
+            url={entry.data.url}
+          >
+            <Content />
+          </TimelineEntry>
+        );
+      })
+    }
+  </section>
+</BaseLayout>
