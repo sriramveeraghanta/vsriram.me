@@ -1,0 +1,40 @@
+---
+interface Props {
+  title: string;
+  spotifyId: string;
+  description?: string;
+}
+
+const { title, spotifyId, description } = Astro.props;
+const embedSrc = `https://open.spotify.com/embed/playlist/${spotifyId}?utm_source=generator&theme=0`;
+const openUrl = `https://open.spotify.com/playlist/${spotifyId}`;
+---
+
+<section class="mb-10">
+  <h2 class="font-serif text-[20px] font-medium text-text">{title}</h2>
+  {
+    description && (
+      <p class="mt-1 font-serif text-[14px] text-text-3">{description}</p>
+    )
+  }
+  <div class="mt-4 overflow-hidden rounded-md border border-border">
+    <iframe
+      src={embedSrc}
+      width="100%"
+      height="352"
+      frameborder="0"
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy"
+      title={`Spotify playlist: ${title}`}
+      class="block bg-bg-soft"
+    ></iframe>
+  </div>
+  <a
+    href={openUrl}
+    target="_blank"
+    rel="noreferrer"
+    class="mt-2 inline-block font-sans text-[11px] uppercase tracking-[0.14em] text-muted-2 transition-colors duration-150 hover:text-accent"
+  >
+    Open in Spotify ↗
+  </a>
+</section>

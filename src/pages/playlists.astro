@@ -1,0 +1,36 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Eyebrow from '~/components/Eyebrow.astro';
+import PlaylistEmbed from '~/components/PlaylistEmbed.astro';
+import { getPlaylists } from '~/lib/collections';
+
+const playlists = await getPlaylists();
+---
+
+<BaseLayout title="Playlists" description="Music I've been listening to.">
+  <section class="pt-4">
+    <Eyebrow>Listening</Eyebrow>
+    <h1 class="mt-4 font-serif text-[clamp(28px,5vw,38px)] font-medium leading-[1.08] tracking-tight">
+      Playlists
+    </h1>
+    <p class="mt-4 max-w-[560px] font-serif text-[15px] leading-[1.6] text-text-3">
+      A small, slowly-growing collection of playlists I keep coming back to.
+    </p>
+  </section>
+
+  <section class="mt-10">
+    {
+      playlists.length === 0 ? (
+        <p class="font-serif text-[15px] italic text-muted">Nothing here yet.</p>
+      ) : (
+        playlists.map((p) => (
+          <PlaylistEmbed
+            title={p.data.title}
+            spotifyId={p.data.spotifyId}
+            description={p.data.description}
+          />
+        ))
+      )
+    }
+  </section>
+</BaseLayout>
