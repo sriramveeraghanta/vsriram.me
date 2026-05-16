@@ -1,0 +1,33 @@
+---
+import { Github, Twitter, Linkedin } from 'lucide-astro';
+import { site } from '~/lib/site';
+
+interface Props {
+  class?: string;
+}
+const { class: className = '' } = Astro.props;
+
+const items = [
+  { label: 'GitHub', href: site.socials.github, Icon: Github },
+  { label: 'Twitter', href: site.socials.twitter, Icon: Twitter },
+  { label: 'LinkedIn', href: site.socials.linkedin, Icon: Linkedin },
+];
+---
+
+<ul class={`flex items-center gap-5 ${className}`}>
+  {
+    items.map(({ label, href, Icon }) => (
+      <li>
+        <a
+          href={href}
+          target="_blank"
+          rel="noreferrer me"
+          aria-label={label}
+          class="text-muted transition-colors duration-150 hover:text-accent"
+        >
+          <Icon size={18} strokeWidth={1.5} />
+        </a>
+      </li>
+    ))
+  }
+</ul>
