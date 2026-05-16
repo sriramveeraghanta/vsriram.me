@@ -1,0 +1,72 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Eyebrow from '~/components/Eyebrow.astro';
+import SocialLinks from '~/components/SocialLinks.astro';
+import profile from '~/assets/images/profile.jpg';
+import { getLatestWritingPosts, formatPostDate } from '~/lib/collections';
+import { site } from '~/lib/site';
+
+const latest = await getLatestWritingPosts(3);
+---
+
+<BaseLayout>
+  <section class="pt-4">
+    <Eyebrow>Principal Engineer · Plane Software</Eyebrow>
+
+    <h1 class="mt-4 font-serif text-[clamp(28px,5vw,38px)] font-medium leading-[1.08] tracking-tight text-text">
+      Building systems that <em class="font-medium not-italic text-accent italic">scale</em>, and the teams that ship them.
+    </h1>
+
+    <p class="mt-5 max-w-[560px] font-serif text-[17px] leading-[1.55] text-text-2">
+      Hey, I'm Sriram — a software architect and engineering manager
+      passionate about empowering businesses through transformative software.
+    </p>
+
+    <p class="mt-4 max-w-[560px] font-serif text-[15px] leading-[1.65] text-text-3">
+      I lead engineering at Plane, one of the fastest-growing open-source
+      project management platforms. My focus: cloud-native architecture,
+      distributed systems, and helping engineers reach their full potential.
+    </p>
+
+    <div class="mt-9 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+      <SocialLinks />
+      <p class="font-sans text-[12px] italic text-muted-2">{site.location}</p>
+    </div>
+
+    <Image
+      src={profile}
+      alt={site.name}
+      width={1024}
+      height={1024}
+      class="sr-only"
+    />
+  </section>
+
+  {
+    latest.length > 0 && (
+      <section class="mt-14">
+        <p class="font-sans text-[10px] uppercase tracking-[0.22em] text-muted-2">
+          Latest Writing
+        </p>
+        <ul class="mt-4 divide-y divide-border-soft">
+          {latest.map((post) => (
+            <li>
+              <a
+                href={`/writing/${post.id}`}
+                class="group flex items-baseline justify-between py-3 no-underline"
+              >
+                <span class="font-serif text-[15px] text-text-2 transition-colors duration-150 group-hover:text-accent">
+                  {post.data.title}
+                </span>
+                <span class="font-sans text-[11px] tracking-wide text-muted-2">
+                  {formatPostDate(post.data.publishedAt)}
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+</BaseLayout>
