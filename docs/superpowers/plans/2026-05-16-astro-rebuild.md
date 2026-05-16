@@ -85,6 +85,7 @@ Each file has one clear responsibility. Components don't know about layouts; lay
 ### Task 1: Branch and wipe the old Next.js implementation
 
 **Files:**
+
 - Delete: `app/`, `components/`, `hooks/`, `lib/`, `styles/`, `pages/` (if any), `.next/`, `next.config.js`, `next-env.d.ts`, `postcss.config.js`, `tailwind.config.js`, `tsconfig.json`, `.eslintrc.json`, `package.json`, `pnpm-lock.yaml`
 - Keep: `.git/`, `public/`, `README.md` (rewritten later), `CLAUDE.md` (rewritten later), `docs/`, `.gitignore` (edited later)
 
@@ -124,6 +125,7 @@ git commit -m "chore: remove Next.js implementation before Astro rebuild"
 ### Task 2: Initialize Astro project in place
 
 **Files:**
+
 - Create: `package.json`, `astro.config.mjs`, `tsconfig.json`, `src/env.d.ts`
 - Modify: `.gitignore` (add Astro entries)
 
@@ -193,11 +195,7 @@ export default defineConfig({
   site: 'https://vsriram.me',
   output: 'static',
   trailingSlash: 'never',
-  integrations: [
-    tailwind({ applyBaseStyles: false }),
-    mdx(),
-    sitemap(),
-  ],
+  integrations: [tailwind({ applyBaseStyles: false }), mdx(), sitemap()],
   markdown: {
     shikiConfig: {
       theme: 'github-dark-dimmed',
@@ -284,6 +282,7 @@ git commit -m "chore: scaffold Astro project with Tailwind + MDX integrations"
 ### Task 3: Editor, format, and lint configuration
 
 **Files:**
+
 - Create: `.nvmrc`, `.editorconfig`, `.prettierrc`, `.eslintrc.cjs`, `.prettierignore`
 
 - [ ] **Step 1: Create `.nvmrc`**
@@ -345,10 +344,7 @@ module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
   plugins: [],
-  extends: [
-    'eslint:recommended',
-    'plugin:astro/recommended',
-  ],
+  extends: ['eslint:recommended', 'plugin:astro/recommended'],
   overrides: [
     {
       files: ['*.astro'],
@@ -384,6 +380,7 @@ git commit -m "chore: add editor, format, and lint config"
 ### Task 4: Visual tokens — Tailwind config and global CSS
 
 **Files:**
+
 - Create: `tailwind.config.mjs`, `src/styles/globals.css`
 
 - [ ] **Step 1: Create `tailwind.config.mjs`**
@@ -472,7 +469,7 @@ export default {
 
   /* Inline code pill */
   :not(pre) > code {
-    @apply rounded bg-[#1a1a1a] px-[0.35em] py-[0.1em] font-mono text-[0.92em] text-text;
+    @apply text-text rounded bg-[#1a1a1a] px-[0.35em] py-[0.1em] font-mono text-[0.92em];
   }
 
   /* Selection */
@@ -522,6 +519,7 @@ git commit -m "feat: set up Tailwind theme, design tokens, and global styles"
 ### Task 5: Site config (`lib/site.ts`)
 
 **Files:**
+
 - Create: `src/lib/site.ts`
 
 - [ ] **Step 1: Create `src/lib/site.ts`**
@@ -572,6 +570,7 @@ git commit -m "feat: add central site config (lib/site.ts)"
 ### Task 6: Content collection schemas (`content/config.ts`)
 
 **Files:**
+
 - Create: `src/content/config.ts`
 
 - [ ] **Step 1: Create `src/content/config.ts`**
@@ -641,6 +640,7 @@ git commit -m "feat: define Zod schemas for writing/work/playlists collections"
 ### Task 7: Typed collection query helpers (`lib/collections.ts`)
 
 **Files:**
+
 - Create: `src/lib/collections.ts`
 
 - [ ] **Step 1: Create `src/lib/collections.ts`**
@@ -656,9 +656,7 @@ export async function getWritingPosts(): Promise<WritingEntry[]> {
   const all = await getCollection('writing', ({ data }) => {
     return import.meta.env.PROD ? data.draft !== true : true;
   });
-  return all.sort(
-    (a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime(),
-  );
+  return all.sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
 }
 
 export async function getLatestWritingPosts(limit = 3): Promise<WritingEntry[]> {
@@ -673,14 +671,10 @@ export async function getWorkEntries(): Promise<WorkEntry[]> {
 
 export async function getPlaylists(): Promise<PlaylistEntry[]> {
   const all = await getCollection('playlists');
-  return all.sort(
-    (a, b) => b.data.addedAt.getTime() - a.data.addedAt.getTime(),
-  );
+  return all.sort((a, b) => b.data.addedAt.getTime() - a.data.addedAt.getTime());
 }
 
-export function groupWritingByYear(
-  posts: WritingEntry[],
-): Map<number, WritingEntry[]> {
+export function groupWritingByYear(posts: WritingEntry[]): Map<number, WritingEntry[]> {
   const groups = new Map<number, WritingEntry[]>();
   for (const post of posts) {
     const year = post.data.publishedAt.getFullYear();
@@ -729,6 +723,7 @@ git commit -m "feat: add typed collection query helpers"
 ### Task 8: Seed placeholder content
 
 **Files:**
+
 - Create: `src/content/writing/hello-world.mdx`
 - Create: `src/content/work/plane.md`
 - Create: `src/content/work/placeholder-prior-role.md`
@@ -738,11 +733,11 @@ git commit -m "feat: add typed collection query helpers"
 
 ````mdx
 ---
-title: "Hello, world"
+title: 'Hello, world'
 description: "First post on the rebuilt vsriram.me. A note on what's coming."
 publishedAt: 2026-05-16
 draft: false
-tags: ["meta"]
+tags: ['meta']
 ---
 
 This is the first post on the rebuilt site. The old Next.js implementation
@@ -771,12 +766,12 @@ More soon.
 
 ```md
 ---
-company: "Plane Software, Inc."
-role: "Principal Engineer"
-startDate: "2022-08"
+company: 'Plane Software, Inc.'
+role: 'Principal Engineer'
+startDate: '2022-08'
 endDate: null
-location: "Remote"
-url: "https://plane.so"
+location: 'Remote'
+url: 'https://plane.so'
 order: 1
 ---
 
@@ -785,31 +780,31 @@ management platforms. Architecture for distributed systems, real-time
 collaboration, and the technical strategy that gets us from open-source
 project to production-ready product.
 
-*(Placeholder copy — fill in with real responsibilities.)*
+_(Placeholder copy — fill in with real responsibilities.)_
 ```
 
 - [ ] **Step 3: Create `src/content/work/placeholder-prior-role.md`**
 
 ```md
 ---
-company: "Previous Company"
-role: "Engineering Manager"
-startDate: "2019-01"
-endDate: "2022-07"
-location: "Hyderabad, India"
+company: 'Previous Company'
+role: 'Engineering Manager'
+startDate: '2019-01'
+endDate: '2022-07'
+location: 'Hyderabad, India'
 order: 2
 ---
 
-*(Placeholder — replace with real prior role from LinkedIn export.)*
+_(Placeholder — replace with real prior role from LinkedIn export.)_
 ```
 
 - [ ] **Step 4: Create `src/content/playlists/late-night-coding.md`**
 
 ```md
 ---
-title: "Late Night Coding"
-spotifyId: "37i9dQZF1DXcBWIGoYBM5M"
-description: "Lo-fi, ambient, instrumental only. Built for long focus blocks."
+title: 'Late Night Coding'
+spotifyId: '37i9dQZF1DXcBWIGoYBM5M'
+description: 'Lo-fi, ambient, instrumental only. Built for long focus blocks.'
 addedAt: 2026-05-16
 ---
 ```
@@ -834,6 +829,7 @@ git commit -m "content: seed placeholder posts, work entries, and playlist"
 ### Task 9: Move profile image into `src/assets/`
 
 **Files:**
+
 - Move: `public/images/profile.jpg` → `src/assets/images/profile.jpg`
 
 - [ ] **Step 1: Move the image**
@@ -869,6 +865,7 @@ git commit -m "chore: move profile image into src/assets for Astro Image optimiz
 ### Task 10: `Eyebrow` and `SocialLinks` components
 
 **Files:**
+
 - Create: `src/components/Eyebrow.astro`
 - Create: `src/components/SocialLinks.astro`
 
@@ -917,7 +914,7 @@ const items = [
           target="_blank"
           rel="noreferrer me"
           aria-label={label}
-          class="text-muted transition-colors duration-150 hover:text-accent"
+          class="text-muted hover:text-accent transition-colors duration-150"
         >
           <Icon size={18} strokeWidth={1.5} />
         </a>
@@ -947,6 +944,7 @@ git commit -m "feat: add Eyebrow and SocialLinks components"
 ### Task 11: `Navbar` component
 
 **Files:**
+
 - Create: `src/components/Navbar.astro`
 
 - [ ] **Step 1: Create `src/components/Navbar.astro`**
@@ -963,13 +961,15 @@ function isActive(href: string): boolean {
 }
 ---
 
-<header class="mx-auto flex max-w-content items-baseline justify-between pt-12">
-  <a href="/" class="font-serif text-[15px] font-semibold tracking-tight text-text no-underline">
+<header class="max-w-content mx-auto flex items-baseline justify-between pt-12">
+  <a href="/" class="text-text font-serif text-[15px] font-semibold tracking-tight no-underline">
     {site.shortName}<span class="text-accent">.</span>
   </a>
 
   <nav aria-label="Primary">
-    <ul class="flex items-center gap-6 font-sans text-[11px] font-medium uppercase tracking-[0.16em] text-muted">
+    <ul
+      class="text-muted flex items-center gap-6 font-sans text-[11px] font-medium uppercase tracking-[0.16em]"
+    >
       {
         site.nav.map((item) => {
           const active = isActive(item.href);
@@ -977,17 +977,17 @@ function isActive(href: string): boolean {
             <li>
               <a
                 href={item.href}
-                class={`group relative transition-colors duration-150 hover:text-text ${
+                class={`hover:text-text group relative transition-colors duration-150 ${
                   active ? 'text-text' : ''
                 }`}
                 aria-current={active ? 'page' : undefined}
               >
                 {item.label}
                 <span
-                  class={`absolute -bottom-1.5 left-0 right-0 h-[2px] bg-accent transition-opacity duration-150 ${
+                  class={`bg-accent absolute -bottom-1.5 left-0 right-0 h-[2px] transition-opacity duration-150 ${
                     active ? 'opacity-100' : 'opacity-0 group-hover:opacity-30'
                   }`}
-                ></span>
+                />
               </a>
             </li>
           );
@@ -1018,6 +1018,7 @@ git commit -m "feat: add Navbar with active route underline"
 ### Task 12: `Footer` component
 
 **Files:**
+
 - Create: `src/components/Footer.astro`
 
 - [ ] **Step 1: Create `src/components/Footer.astro`**
@@ -1030,11 +1031,12 @@ import { site } from '~/lib/site';
 const year = new Date().getFullYear();
 ---
 
-<footer class="mx-auto mt-24 max-w-content border-t border-border-soft pb-16 pt-10">
+<footer class="max-w-content border-border-soft mx-auto mt-24 border-t pb-16 pt-10">
   <div class="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
     <SocialLinks />
-    <p class="font-sans text-[11px] uppercase tracking-[0.16em] text-muted-2">
-      © {year} {site.shortName} · Built with Astro
+    <p class="text-muted-2 font-sans text-[11px] uppercase tracking-[0.16em]">
+      © {year}
+      {site.shortName} · Built with Astro
     </p>
   </div>
 </footer>
@@ -1060,6 +1062,7 @@ git commit -m "feat: add Footer component"
 ### Task 13: `BaseLayout`
 
 **Files:**
+
 - Create: `src/layouts/BaseLayout.astro`
 - Create: `public/robots.txt`
 
@@ -1128,10 +1131,10 @@ const fullOgImage = new URL(ogImage, site.url).toString();
     <meta name="twitter:image" content={fullOgImage} />
   </head>
 
-  <body class="min-h-screen bg-bg text-text antialiased">
+  <body class="bg-bg text-text min-h-screen antialiased">
     <div class="px-7 sm:px-14">
       <Navbar />
-      <main class="mx-auto mt-12 max-w-content">
+      <main class="max-w-content mx-auto mt-12">
         <slot />
       </main>
       <Footer />
@@ -1160,6 +1163,7 @@ git commit -m "feat: add BaseLayout with full meta and robots.txt"
 ### Task 14: Home page (`/`)
 
 **Files:**
+
 - Create: `src/pages/index.astro`
 
 - [ ] **Step 1: Create `src/pages/index.astro`**
@@ -1181,52 +1185,47 @@ const latest = await getLatestWritingPosts(3);
   <section class="pt-4">
     <Eyebrow>Principal Engineer · Plane Software</Eyebrow>
 
-    <h1 class="mt-4 font-serif text-[clamp(28px,5vw,38px)] font-medium leading-[1.08] tracking-tight text-text">
-      Building systems that <em class="font-medium not-italic text-accent italic">scale</em>, and the teams that ship them.
+    <h1
+      class="text-text mt-4 font-serif text-[clamp(28px,5vw,38px)] font-medium leading-[1.08] tracking-tight"
+    >
+      Building systems that <em class="text-accent font-medium italic not-italic">scale</em>, and
+      the teams that ship them.
     </h1>
 
-    <p class="mt-5 max-w-[560px] font-serif text-[17px] leading-[1.55] text-text-2">
-      Hey, I'm Sriram — a software architect and engineering manager
-      passionate about empowering businesses through transformative software.
+    <p class="text-text-2 mt-5 max-w-[560px] font-serif text-[17px] leading-[1.55]">
+      Hey, I'm Sriram — a software architect and engineering manager passionate about empowering
+      businesses through transformative software.
     </p>
 
-    <p class="mt-4 max-w-[560px] font-serif text-[15px] leading-[1.65] text-text-3">
-      I lead engineering at Plane, one of the fastest-growing open-source
-      project management platforms. My focus: cloud-native architecture,
-      distributed systems, and helping engineers reach their full potential.
+    <p class="text-text-3 mt-4 max-w-[560px] font-serif text-[15px] leading-[1.65]">
+      I lead engineering at Plane, one of the fastest-growing open-source project management
+      platforms. My focus: cloud-native architecture, distributed systems, and helping engineers
+      reach their full potential.
     </p>
 
     <div class="mt-9 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
       <SocialLinks />
-      <p class="font-sans text-[12px] italic text-muted-2">{site.location}</p>
+      <p class="text-muted-2 font-sans text-[12px] italic">{site.location}</p>
     </div>
 
-    <Image
-      src={profile}
-      alt={site.name}
-      width={1024}
-      height={1024}
-      class="sr-only"
-    />
+    <Image src={profile} alt={site.name} width={1024} height={1024} class="sr-only" />
   </section>
 
   {
     latest.length > 0 && (
       <section class="mt-14">
-        <p class="font-sans text-[10px] uppercase tracking-[0.22em] text-muted-2">
-          Latest Writing
-        </p>
-        <ul class="mt-4 divide-y divide-border-soft">
+        <p class="text-muted-2 font-sans text-[10px] uppercase tracking-[0.22em]">Latest Writing</p>
+        <ul class="divide-border-soft mt-4 divide-y">
           {latest.map((post) => (
             <li>
               <a
                 href={`/writing/${post.slug}`}
                 class="group flex items-baseline justify-between py-3 no-underline"
               >
-                <span class="font-serif text-[15px] text-text-2 transition-colors duration-150 group-hover:text-accent">
+                <span class="text-text-2 group-hover:text-accent font-serif text-[15px] transition-colors duration-150">
                   {post.data.title}
                 </span>
-                <span class="font-sans text-[11px] tracking-wide text-muted-2">
+                <span class="text-muted-2 font-sans text-[11px] tracking-wide">
                   {formatPostDate(post.data.publishedAt)}
                 </span>
               </a>
@@ -1251,6 +1250,7 @@ pnpm dev
 Then open `http://localhost:4321/` in your browser.
 
 Expected:
+
 - Dark background, serif headline with orange italic "scale"
 - Orange eyebrow text above the headline
 - Bio paragraphs, social icons row, location at right
@@ -1272,6 +1272,7 @@ git commit -m "feat: add home page with hero and latest writing"
 ### Task 15: `TimelineEntry` component + `/work` page
 
 **Files:**
+
 - Create: `src/components/TimelineEntry.astro`
 - Create: `src/pages/work.astro`
 
@@ -1295,14 +1296,14 @@ const dateRange = formatWorkDateRange(startDate, endDate);
 const current = endDate === null;
 ---
 
-<article class="grid grid-cols-1 gap-2 border-b border-border-soft py-7 sm:grid-cols-[180px_1fr]">
-  <div class="font-sans text-[12px] uppercase tracking-[0.14em] text-muted-2">
+<article class="border-border-soft grid grid-cols-1 gap-2 border-b py-7 sm:grid-cols-[180px_1fr]">
+  <div class="text-muted-2 font-sans text-[12px] uppercase tracking-[0.14em]">
     {dateRange}
-    {current && <span class="ml-2 text-accent">●</span>}
+    {current && <span class="text-accent ml-2">●</span>}
   </div>
 
   <div>
-    <h2 class="font-serif text-[20px] font-medium leading-tight text-text">
+    <h2 class="text-text font-serif text-[20px] font-medium leading-tight">
       {role}
       <span class="text-muted"> · </span>
       {
@@ -1311,7 +1312,7 @@ const current = endDate === null;
             href={url}
             target="_blank"
             rel="noreferrer"
-            class="text-text-2 underline decoration-border decoration-1 underline-offset-4 transition-colors duration-150 hover:text-accent hover:decoration-accent"
+            class="text-text-2 decoration-border hover:text-accent hover:decoration-accent underline decoration-1 underline-offset-4 transition-colors duration-150"
           >
             {company}
           </a>
@@ -1320,13 +1321,11 @@ const current = endDate === null;
         )
       }
     </h2>
-    {
-      location && (
-        <p class="mt-1 font-sans text-[12px] italic text-muted-2">{location}</p>
-      )
-    }
+    {location && <p class="text-muted-2 mt-1 font-sans text-[12px] italic">{location}</p>}
 
-    <div class="prose-invert prose mt-3 max-w-none font-serif text-[15px] leading-[1.65] text-text-3">
+    <div
+      class="prose-invert prose text-text-3 mt-3 max-w-none font-serif text-[15px] leading-[1.65]"
+    >
       <slot />
     </div>
   </div>
@@ -1348,10 +1347,12 @@ const entries = await getWorkEntries();
 <BaseLayout title="Work" description="Career timeline.">
   <section class="pt-4">
     <Eyebrow>Career</Eyebrow>
-    <h1 class="mt-4 font-serif text-[clamp(28px,5vw,38px)] font-medium leading-[1.08] tracking-tight">
+    <h1
+      class="mt-4 font-serif text-[clamp(28px,5vw,38px)] font-medium leading-[1.08] tracking-tight"
+    >
       Work
     </h1>
-    <p class="mt-4 max-w-[560px] font-serif text-[15px] leading-[1.6] text-text-3">
+    <p class="text-text-3 mt-4 max-w-[560px] font-serif text-[15px] leading-[1.6]">
       A timeline of the roles, teams, and problems I've worked on.
     </p>
   </section>
@@ -1388,6 +1389,7 @@ pnpm dev
 Open `http://localhost:4321/work`.
 
 Expected:
+
 - Same nav/footer chrome as home, with "Work" active (orange underline)
 - "CAREER" eyebrow + large "Work" heading
 - Two timeline entries (Plane current with orange dot, prior role with end date)
@@ -1407,6 +1409,7 @@ git commit -m "feat: add /work page with timeline entries"
 ### Task 16: `PostCard` component + `/writing` index
 
 **Files:**
+
 - Create: `src/components/PostCard.astro`
 - Create: `src/pages/writing/index.astro`
 
@@ -1428,21 +1431,23 @@ const { slug, title, description, publishedAt } = Astro.props;
 
 <a
   href={`/writing/${slug}`}
-  class="group flex flex-col gap-1 border-b border-border-soft py-4 no-underline sm:flex-row sm:items-baseline sm:justify-between sm:gap-6"
+  class="border-border-soft group flex flex-col gap-1 border-b py-4 no-underline sm:flex-row sm:items-baseline sm:justify-between sm:gap-6"
 >
   <div class="min-w-0 flex-1">
-    <h3 class="font-serif text-[16px] font-medium text-text-2 transition-colors duration-150 group-hover:text-accent">
+    <h3
+      class="text-text-2 group-hover:text-accent font-serif text-[16px] font-medium transition-colors duration-150"
+    >
       {title}
     </h3>
     {
       description && (
-        <p class="mt-1 font-serif text-[13px] leading-[1.5] text-muted">{description}</p>
+        <p class="text-muted mt-1 font-serif text-[13px] leading-[1.5]">{description}</p>
       )
     }
   </div>
   <time
     datetime={publishedAt.toISOString()}
-    class="shrink-0 font-sans text-[11px] tracking-wide text-muted-2"
+    class="text-muted-2 shrink-0 font-sans text-[11px] tracking-wide"
   >
     {formatPostDate(publishedAt)}
   </time>
@@ -1459,18 +1464,18 @@ import PostCard from '~/components/PostCard.astro';
 import { getWritingPosts, groupWritingByYear } from '~/lib/collections';
 
 const posts = await getWritingPosts();
-const grouped = Array.from(groupWritingByYear(posts).entries()).sort(
-  (a, b) => b[0] - a[0],
-);
+const grouped = Array.from(groupWritingByYear(posts).entries()).sort((a, b) => b[0] - a[0]);
 ---
 
 <BaseLayout title="Writing" description="Essays and notes on engineering, systems, and teams.">
   <section class="pt-4">
     <Eyebrow>Essays &amp; Notes</Eyebrow>
-    <h1 class="mt-4 font-serif text-[clamp(28px,5vw,38px)] font-medium leading-[1.08] tracking-tight">
+    <h1
+      class="mt-4 font-serif text-[clamp(28px,5vw,38px)] font-medium leading-[1.08] tracking-tight"
+    >
       Writing
     </h1>
-    <p class="mt-4 max-w-[560px] font-serif text-[15px] leading-[1.6] text-text-3">
+    <p class="text-text-3 mt-4 max-w-[560px] font-serif text-[15px] leading-[1.6]">
       Notes on distributed systems, open source, and the craft of building software at scale.
     </p>
   </section>
@@ -1478,13 +1483,11 @@ const grouped = Array.from(groupWritingByYear(posts).entries()).sort(
   <section class="mt-10">
     {
       posts.length === 0 ? (
-        <p class="font-serif text-[15px] italic text-muted">No posts yet.</p>
+        <p class="text-muted font-serif text-[15px] italic">No posts yet.</p>
       ) : (
         grouped.map(([year, entries]) => (
           <div class="mt-8 first:mt-0">
-            <p class="font-sans text-[10px] uppercase tracking-[0.22em] text-muted-2">
-              {year}
-            </p>
+            <p class="text-muted-2 font-sans text-[10px] uppercase tracking-[0.22em]">{year}</p>
             <div class="mt-2">
               {entries.map((post) => (
                 <PostCard
@@ -1513,6 +1516,7 @@ pnpm dev
 Open `http://localhost:4321/writing`.
 
 Expected:
+
 - "Writing" page with year heading "2026" and one post card ("Hello, world")
 - Hover the title — it turns orange
 - Nav shows "Writing" active
@@ -1531,6 +1535,7 @@ git commit -m "feat: add /writing index with year grouping"
 ### Task 17: `Prose` + `PostLayout` + dynamic `/writing/[slug]`
 
 **Files:**
+
 - Create: `src/components/Prose.astro`
 - Create: `src/layouts/PostLayout.astro`
 - Create: `src/pages/writing/[slug].astro`
@@ -1545,9 +1550,7 @@ interface Props {
 const { class: className = '' } = Astro.props;
 ---
 
-<div
-  class={`prose prose-invert max-w-none font-serif text-[17px] leading-[1.7] ${className}`}
->
+<div class={`prose prose-invert max-w-none font-serif text-[17px] leading-[1.7] ${className}`}>
   <slot />
 </div>
 ```
@@ -1574,11 +1577,13 @@ const { title, description, publishedAt, updatedAt } = Astro.props;
 <BaseLayout title={title} description={description} type="article">
   <article class="pt-4">
     <Eyebrow>Writing</Eyebrow>
-    <h1 class="mt-4 font-serif text-[clamp(28px,5vw,38px)] font-medium leading-[1.1] tracking-tight">
+    <h1
+      class="mt-4 font-serif text-[clamp(28px,5vw,38px)] font-medium leading-[1.1] tracking-tight"
+    >
       {title}
     </h1>
 
-    <div class="mt-4 flex items-center gap-3 font-sans text-[12px] text-muted-2">
+    <div class="text-muted-2 mt-4 flex items-center gap-3 font-sans text-[12px]">
       <time datetime={publishedAt.toISOString()}>{formatPostDate(publishedAt)}</time>
       {
         updatedAt && (
@@ -1590,16 +1595,16 @@ const { title, description, publishedAt, updatedAt } = Astro.props;
       }
     </div>
 
-    <hr class="my-9 border-0 border-t border-border-soft" />
+    <hr class="border-border-soft my-9 border-0 border-t" />
 
     <Prose>
       <slot />
     </Prose>
 
-    <div class="mt-16 border-t border-border-soft pt-6">
+    <div class="border-border-soft mt-16 border-t pt-6">
       <a
         href="/writing"
-        class="font-sans text-[12px] uppercase tracking-[0.16em] text-muted transition-colors duration-150 hover:text-accent"
+        class="text-muted hover:text-accent font-sans text-[12px] uppercase tracking-[0.16em] transition-colors duration-150"
       >
         ← Back to Writing
       </a>
@@ -1648,6 +1653,7 @@ pnpm dev
 Open `http://localhost:4321/writing/hello-world`.
 
 Expected:
+
 - "WRITING" eyebrow, post title in serif, publish date below
 - Body rendered with prose styling — h2 bold, paragraphs, bullet list
 - Code block with `github-dark-dimmed` syntax highlighting
@@ -1669,6 +1675,7 @@ git commit -m "feat: render individual MDX posts at /writing/[slug]"
 ### Task 18: `PlaylistEmbed` component + `/playlists` page
 
 **Files:**
+
 - Create: `src/components/PlaylistEmbed.astro`
 - Create: `src/pages/playlists.astro`
 
@@ -1688,13 +1695,9 @@ const openUrl = `https://open.spotify.com/playlist/${spotifyId}`;
 ---
 
 <section class="mb-10">
-  <h2 class="font-serif text-[20px] font-medium text-text">{title}</h2>
-  {
-    description && (
-      <p class="mt-1 font-serif text-[14px] text-text-3">{description}</p>
-    )
-  }
-  <div class="mt-4 overflow-hidden rounded-md border border-border">
+  <h2 class="text-text font-serif text-[20px] font-medium">{title}</h2>
+  {description && <p class="text-text-3 mt-1 font-serif text-[14px]">{description}</p>}
+  <div class="border-border mt-4 overflow-hidden rounded-md border">
     <iframe
       src={embedSrc}
       width="100%"
@@ -1703,14 +1706,13 @@ const openUrl = `https://open.spotify.com/playlist/${spotifyId}`;
       allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
       loading="lazy"
       title={`Spotify playlist: ${title}`}
-      class="block bg-bg-soft"
-    ></iframe>
+      class="bg-bg-soft block"></iframe>
   </div>
   <a
     href={openUrl}
     target="_blank"
     rel="noreferrer"
-    class="mt-2 inline-block font-sans text-[11px] uppercase tracking-[0.14em] text-muted-2 transition-colors duration-150 hover:text-accent"
+    class="text-muted-2 hover:text-accent mt-2 inline-block font-sans text-[11px] uppercase tracking-[0.14em] transition-colors duration-150"
   >
     Open in Spotify ↗
   </a>
@@ -1732,10 +1734,12 @@ const playlists = await getPlaylists();
 <BaseLayout title="Playlists" description="Music I've been listening to.">
   <section class="pt-4">
     <Eyebrow>Listening</Eyebrow>
-    <h1 class="mt-4 font-serif text-[clamp(28px,5vw,38px)] font-medium leading-[1.08] tracking-tight">
+    <h1
+      class="mt-4 font-serif text-[clamp(28px,5vw,38px)] font-medium leading-[1.08] tracking-tight"
+    >
       Playlists
     </h1>
-    <p class="mt-4 max-w-[560px] font-serif text-[15px] leading-[1.6] text-text-3">
+    <p class="text-text-3 mt-4 max-w-[560px] font-serif text-[15px] leading-[1.6]">
       A small, slowly-growing collection of playlists I keep coming back to.
     </p>
   </section>
@@ -1743,7 +1747,7 @@ const playlists = await getPlaylists();
   <section class="mt-10">
     {
       playlists.length === 0 ? (
-        <p class="font-serif text-[15px] italic text-muted">Nothing here yet.</p>
+        <p class="text-muted font-serif text-[15px] italic">Nothing here yet.</p>
       ) : (
         playlists.map((p) => (
           <PlaylistEmbed
@@ -1768,6 +1772,7 @@ pnpm dev
 Open `http://localhost:4321/playlists`.
 
 Expected:
+
 - "Playlists" page with "Listening" eyebrow
 - One Spotify embed (Late Night Coding) — note: embeds may render blank in some browser privacy modes, that's expected; the "Open in Spotify ↗" link should always work
 
@@ -1785,6 +1790,7 @@ git commit -m "feat: add /playlists with Spotify embeds and fallback links"
 ### Task 19: 404 page
 
 **Files:**
+
 - Create: `src/pages/404.astro`
 
 - [ ] **Step 1: Create `src/pages/404.astro`**
@@ -1799,14 +1805,14 @@ import Eyebrow from '~/components/Eyebrow.astro';
   <section class="pt-12 text-center">
     <Eyebrow class="!text-muted-2">Error 404</Eyebrow>
     <h1 class="mt-4 font-serif text-[clamp(36px,8vw,72px)] font-medium leading-none tracking-tight">
-      Not <em class="font-medium italic text-accent">here</em>.
+      Not <em class="text-accent font-medium italic">here</em>.
     </h1>
-    <p class="mx-auto mt-6 max-w-[420px] font-serif text-[15px] leading-[1.6] text-text-3">
+    <p class="text-text-3 mx-auto mt-6 max-w-[420px] font-serif text-[15px] leading-[1.6]">
       The page you're looking for doesn't exist — or it moved when the site was rebuilt.
     </p>
     <a
       href="/"
-      class="mt-8 inline-block font-sans text-[12px] uppercase tracking-[0.16em] text-muted transition-colors duration-150 hover:text-accent"
+      class="text-muted hover:text-accent mt-8 inline-block font-sans text-[12px] uppercase tracking-[0.16em] transition-colors duration-150"
     >
       ← Back to home
     </a>
@@ -1839,6 +1845,7 @@ git commit -m "feat: add custom 404 page"
 ### Task 20: RSS feed
 
 **Files:**
+
 - Create: `src/pages/rss.xml.ts`
 
 - [ ] **Step 1: Create `src/pages/rss.xml.ts`**
@@ -1892,6 +1899,7 @@ git commit -m "feat: generate RSS feed for /writing"
 ### Task 21: Favicon
 
 **Files:**
+
 - Create: `public/favicon.svg`
 - Delete: `public/favicon.ico` (if it exists from the old site)
 
@@ -1936,6 +1944,7 @@ git commit -m "feat: add SVG favicon matching the brand mark"
 ### Task 22: GitHub Actions CI
 
 **Files:**
+
 - Create: `.github/workflows/ci.yml`
 
 - [ ] **Step 1: Create `.github/workflows/ci.yml`**
@@ -1992,11 +2001,12 @@ git commit -m "ci: add GitHub Actions workflow for check + build"
 ### Task 23: Rewrite `README.md`
 
 **Files:**
+
 - Modify: `README.md` (full rewrite)
 
 - [ ] **Step 1: Overwrite `README.md`**
 
-```md
+````md
 # vsriram.me
 
 Personal site — built with [Astro](https://astro.build), deployed to Cloudflare Pages.
@@ -2007,19 +2017,20 @@ Personal site — built with [Astro](https://astro.build), deployed to Cloudflar
 pnpm install
 pnpm dev
 ```
+````
 
 Then open <http://localhost:4321>.
 
 ## Scripts
 
-| Command         | Description                                     |
-| --------------- | ----------------------------------------------- |
-| `pnpm dev`      | Astro dev server                                |
-| `pnpm build`    | Production build to `dist/`                     |
-| `pnpm preview`  | Serve the built site locally                    |
-| `pnpm check`    | TypeScript + content collection schema check   |
-| `pnpm format`   | Prettier across the repo                        |
-| `pnpm lint`     | ESLint                                          |
+| Command        | Description                                  |
+| -------------- | -------------------------------------------- |
+| `pnpm dev`     | Astro dev server                             |
+| `pnpm build`   | Production build to `dist/`                  |
+| `pnpm preview` | Serve the built site locally                 |
+| `pnpm check`   | TypeScript + content collection schema check |
+| `pnpm format`  | Prettier across the repo                     |
+| `pnpm lint`    | ESLint                                       |
 
 ## Content
 
@@ -2040,14 +2051,15 @@ Cloudflare Pages builds from the default branch:
 ## License
 
 MIT
-```
+
+````
 
 - [ ] **Step 2: Verify it renders correctly**
 
 ```bash
 # If you have a markdown previewer, open README.md; otherwise just check it parses
 head -10 README.md
-```
+````
 
 - [ ] **Step 3: Commit**
 
@@ -2061,6 +2073,7 @@ git commit -m "docs: rewrite README for the Astro stack"
 ### Task 24: Rewrite `CLAUDE.md`
 
 **Files:**
+
 - Modify: `CLAUDE.md` (full rewrite)
 
 - [ ] **Step 1: Overwrite `CLAUDE.md`**
@@ -2229,23 +2242,23 @@ After CI passes, the Cloudflare Pages preview URL (if configured) should be insp
 
 Spec coverage check — every section of `2026-05-16-astro-rebuild-design.md` mapped to a task:
 
-| Spec section                               | Task(s)              |
-| ------------------------------------------ | -------------------- |
-| Architecture (framework, output, integrations) | Task 2           |
-| Pages & routes (/, /work, /writing, /writing/[slug], /playlists, /rss.xml, /404) | Tasks 14, 15, 16, 17, 18, 19, 20 |
-| Content collections + Zod schemas           | Task 6               |
-| `lib/site.ts`, `lib/collections.ts`         | Tasks 5, 7           |
-| Component contracts (BaseLayout, PostLayout, Navbar, Footer, SocialLinks, Eyebrow, PostCard, TimelineEntry, PlaylistEmbed, Prose) | Tasks 10, 11, 12, 13, 15, 16, 17, 18 |
-| Visual system (colors, type, spacing, motion, code blocks) | Task 4   |
-| Error handling (schema failures, broken links, 404, Spotify fallback) | Tasks 6 (schemas), 19 (404), 18 (Spotify fallback); broken-link detection runs via `pnpm check` in every task |
-| Build & deployment (Cloudflare, GH Action)  | Tasks 22, 23, 25     |
-| Rebuild strategy (in-place clean slate, history preserved) | Task 1, 25 |
-| Editor/format/lint config                   | Task 3               |
-| Self-hosted fonts                           | Task 4 (imports), Task 2 (deps) |
-| Favicon                                     | Task 21              |
-| Profile image move                          | Task 9               |
-| Placeholder seed content                    | Task 8               |
-| Updated README, CLAUDE.md                   | Tasks 23, 24         |
+| Spec section                                                                                                                      | Task(s)                                                                                                       |
+| --------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| Architecture (framework, output, integrations)                                                                                    | Task 2                                                                                                        |
+| Pages & routes (/, /work, /writing, /writing/[slug], /playlists, /rss.xml, /404)                                                  | Tasks 14, 15, 16, 17, 18, 19, 20                                                                              |
+| Content collections + Zod schemas                                                                                                 | Task 6                                                                                                        |
+| `lib/site.ts`, `lib/collections.ts`                                                                                               | Tasks 5, 7                                                                                                    |
+| Component contracts (BaseLayout, PostLayout, Navbar, Footer, SocialLinks, Eyebrow, PostCard, TimelineEntry, PlaylistEmbed, Prose) | Tasks 10, 11, 12, 13, 15, 16, 17, 18                                                                          |
+| Visual system (colors, type, spacing, motion, code blocks)                                                                        | Task 4                                                                                                        |
+| Error handling (schema failures, broken links, 404, Spotify fallback)                                                             | Tasks 6 (schemas), 19 (404), 18 (Spotify fallback); broken-link detection runs via `pnpm check` in every task |
+| Build & deployment (Cloudflare, GH Action)                                                                                        | Tasks 22, 23, 25                                                                                              |
+| Rebuild strategy (in-place clean slate, history preserved)                                                                        | Task 1, 25                                                                                                    |
+| Editor/format/lint config                                                                                                         | Task 3                                                                                                        |
+| Self-hosted fonts                                                                                                                 | Task 4 (imports), Task 2 (deps)                                                                               |
+| Favicon                                                                                                                           | Task 21                                                                                                       |
+| Profile image move                                                                                                                | Task 9                                                                                                        |
+| Placeholder seed content                                                                                                          | Task 8                                                                                                        |
+| Updated README, CLAUDE.md                                                                                                         | Tasks 23, 24                                                                                                  |
 
 No spec gaps identified.
 
