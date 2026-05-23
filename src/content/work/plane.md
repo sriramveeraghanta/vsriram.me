@@ -1,16 +1,18 @@
 ---
 company: "Plane Software, Inc."
-role: "Principal Engineer"
-startDate: "2022-08"
+role: "VP of Engineering"
+startDate: "2023-07"
 endDate: null
-location: "Remote"
+location: "Hyderabad, India"
 url: "https://plane.so"
 order: 1
 ---
 
-Leading engineering at one of the fastest-growing open-source project
-management platforms. Architecture for distributed systems, real-time
-collaboration, and the technical strategy that gets us from open-source
-project to production-ready product.
+Joined as Principal Engineer and now lead engineering as VP of Engineering
+at one of the fastest-growing open-source project management platforms.
 
-*(Placeholder copy — fill in with real responsibilities.)*
+Responsible for the technical strategy that takes Plane from an
+open-source project to a production-ready product — architecting for
+distributed systems and real-time collaboration, shaping the engineering
+organization, and setting the practices that keep the team shipping at
+pace as the product and team grow.
