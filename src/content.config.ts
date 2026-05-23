@@ -1,5 +1,6 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
+import { z } from 'astro/zod';
 
 const writing = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/writing' }),
@@ -25,7 +26,7 @@ const work = defineCollection({
       .nullable()
       .default(null),
     location: z.string().optional(),
-    url: z.string().url().optional(),
+    url: z.url().optional(),
     order: z.number().int(),
   }),
 });
