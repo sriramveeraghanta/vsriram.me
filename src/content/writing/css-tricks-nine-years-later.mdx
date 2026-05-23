@@ -1,0 +1,217 @@
+---
+title: "CSS Tricks, Nine Years Later"
+description: "Revisiting a 2017 blog post on practical CSS techniques and what each of them looks like in 2026."
+publishedAt: 2026-04-08
+draft: false
+tags: ["css", "web", "retrospective"]
+---
+
+In March 2017 I wrote a short post called *CSS Tricks That Makes Web
+Designing Easy*. Four practical bits I was excited about at the time:
+custom properties, gradient overlays on images, `object-fit: cover`, and
+flexbox for card grids.
+
+Nine years later the baseline has shifted. Three of those "tricks" are
+now just *how you write CSS*. The fourth — flexbox for grids — has a
+better tool now. This is the same article, rewritten with what I'd
+actually reach for in 2026.
+
+## 1. Custom properties
+
+**Then:** CSS variables were a fresh win — define colors and spacing
+once on `:root`, reference them with `var()`.
+
+```css
+:root {
+  --primary: #ff5722;
+  --gap: 16px;
+}
+```
+
+**Now:** That still works, but variables compose with `color-mix()`,
+OKLCH, and `@property` for typed values you can actually animate.
+
+```css
+:root {
+  --primary: oklch(70% 0.18 30);
+  --primary-soft: color-mix(in oklch, var(--primary) 30%, transparent);
+}
+
+@property --hue {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 30;
+}
+```
+
+Variables aren't a *trick* anymore — they're the substrate everything
+else runs on.
+
+## 2. Image overlays
+
+**Then:** Layer a translucent `linear-gradient` over a background image
+to keep text readable.
+
+```css
+.hero {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('hero.jpg') center / cover;
+}
+```
+
+**Now:** Same idea, but `backdrop-filter` and `mix-blend-mode` give you
+overlays that respond to the image underneath instead of flat-darkening
+it.
+
+```css
+.hero {
+  position: relative;
+  background: url('hero.jpg') center / cover;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  backdrop-filter: brightness(0.6) saturate(1.1);
+}
+```
+
+Looks better on bright photos and you don't lose color depth in the
+shadows.
+
+## 3. Object-fit on images
+
+**Then:** `object-fit: cover` on an `<img>` so it crops proportionally
+inside fixed dimensions, the way background images do.
+
+```css
+img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+```
+
+**Now:** Same property — still load-bearing — but paired with
+`aspect-ratio` you stop hardcoding heights entirely.
+
+```css
+img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+```
+
+The image reserves its space before it loads, the container scales
+fluidly, and cumulative layout shift goes to zero.
+
+## 4. Card grids
+
+**Then:** Flexbox with `flex-wrap` and percentage widths for a
+responsive card layout.
+
+```css
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.card {
+  flex: 1 1 calc(33.333% - 16px);
+}
+```
+
+**Now:** CSS Grid does this in one line and handles uneven counts
+cleanly. Subgrid lets children align across cards.
+
+```css
+.cards {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.card {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+}
+```
+
+`auto-fit` + `minmax()` replaces most media queries you used to write
+for card layouts.
+
+## What didn't exist in 2017
+
+The previous four were updates. These four are genuinely new — none of
+them were usable when I wrote the original.
+
+**Container queries.** Components respond to their container, not the
+viewport. A sidebar card and a hero card can use the *same component*
+and render differently because the container width differs.
+
+```css
+.card {
+  container-type: inline-size;
+}
+
+@container (min-width: 400px) {
+  .card-body {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+}
+```
+
+**Fluid type with `clamp()`.** One line that scales smoothly between a
+min and max without a single media query.
+
+```css
+h1 {
+  font-size: clamp(28px, 5vw, 48px);
+}
+```
+
+**The `:has()` selector.** "Style the parent based on its children" —
+the thing CSS couldn't do for two decades.
+
+```css
+.card:has(img) {
+  padding: 0;
+}
+
+.form:has(input:invalid) {
+  border-color: red;
+}
+```
+
+**Logical properties.** `margin-inline`, `padding-block`,
+`inset-inline-start`. They map to text-flow direction instead of
+physical sides, so one stylesheet works for LTR and RTL without
+overrides.
+
+```css
+.card {
+  padding-block: 16px;
+  padding-inline: 24px;
+  margin-inline-start: auto;
+}
+```
+
+---
+
+The biggest takeaway from rereading the 2017 version is how much of
+what used to be a *trick* is now boring. Variables are the default.
+`object-fit` is the default. Gradient overlays are still useful but
+live in a richer toolbox now.
+
+The work has moved up the stack. The interesting CSS questions in 2026
+aren't *how do I center a div* — they're *how does this component
+behave when its container changes shape, when the user prefers reduced
+motion, when the layout has to render across left-to-right and
+right-to-left scripts without rework.* The primitives are finally good
+enough that those are the real questions.

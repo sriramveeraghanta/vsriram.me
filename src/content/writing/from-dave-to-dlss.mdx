@@ -1,0 +1,128 @@
+---
+title: "From Dave to DLSS: Two Decades of Gaming"
+description: "From 256-color DOS classics to real-time path tracing and AI-upscaled frames — what changed about computer gaming, in hardware and in software, over the last twenty years."
+publishedAt: 2026-05-23
+draft: false
+tags: ["gaming", "hardware", "retrospective"]
+---
+
+The first games I remember playing were *Dangerous Dave*, *Prince of
+Persia*, *Road Rash*, and *Doom*. A shared family PC, a CRT monitor
+that hummed when it warmed up, and a 3.5-inch floppy with the game
+copied off a friend's machine. The whole experience fit in single-digit
+megabytes.
+
+Three decades later I can stream a 4K open-world game running on a GPU
+in a data center two thousand kilometers away, and the latency is low
+enough that I can't tell it isn't local. The leap is staggering, but
+it didn't happen in one jump. Two decades of slow compounding in
+hardware and software got us here.
+
+## What those early games actually were
+
+Dave and Prince of Persia were 2D side-scrollers running in 320×200,
+256 colors, on hardware with a few megabytes of RAM and no dedicated
+graphics chip. The PC drew every pixel through the CPU. The sound was
+PC speaker beeps until SoundBlaster cards became standard.
+
+Doom (1993) was the moment the wall broke. It rendered a 3D-looking
+world using clever 2D tricks — raycasting, sprite billboards, BSP
+trees — because real 3D rendering on consumer hardware didn't exist
+yet. id Software wrote a software renderer that squeezed pseudo-3D
+out of a 486. There was no GPU. There was nothing to accelerate.
+
+The fact that Doom shipped at all is what put PC gaming on the map.
+
+## The hardware leap
+
+Two decades ago, "having a graphics card" was a meaningful purchasing
+decision. Today, the GPU in a midrange laptop is more capable than
+the supercomputers that rendered Pixar's *Toy Story*.
+
+A rough sketch of what changed:
+
+**CPUs got wider, not faster.** Clock speeds plateaued around 2005 at
+3-4 GHz. Instead of going faster, processors went *wider* — 2 cores,
+then 4, then 8, then 16. Game engines had to learn how to use them.
+
+**GPUs became the real story.** Programmable shaders (early 2000s)
+turned the GPU from a fixed-function pixel pusher into a general
+parallel compute engine. Ray-tracing acceleration (NVIDIA RTX, 2018)
+brought light-transport simulation — previously a film-rendering
+technique that took hours per frame — into real-time at 60 fps.
+
+**Storage stopped being the bottleneck.** Spinning drives gave way to
+SATA SSDs, then NVMe, then PCIe Gen4 and Gen5. Game install sizes
+ballooned from ~600MB CDs to 200GB downloads, but load times *fell*
+because the bandwidth grew faster than the file sizes.
+
+**Displays caught up.** CRTs to LCDs to OLED. 60 Hz to 144, 240, 360.
+HDR. Variable refresh rate. The window the game renders into is itself
+a generation ahead of where it was.
+
+**Memory and bandwidth.** From a few hundred megabytes of system RAM
+to 32GB+ being standard, with GDDR6X on the GPU running at speeds the
+DDR-1 era couldn't have imagined.
+
+## The software leap
+
+Hardware is half the story. What software learned to do with the
+hardware is the other half.
+
+**Engines matured into platforms.** Quake's engine was custom code per
+shipped game. Unreal and Unity turned the engine into reusable
+infrastructure with editors, asset pipelines, physics, scripting, and
+animation systems. A two-person indie team in 2026 can ship a game
+that would have required a hundred-person studio in 2005.
+
+**Lighting became physically based.** Early 3D games faked lighting
+with baked textures and lightmaps — the light didn't change. Modern
+engines (Unreal 5's Lumen, real-time path tracing) simulate actual
+light bounces, every frame, dynamically. The same scene at noon and at
+sunset is the same geometry; the lighting solver does the rest.
+
+**Geometry stopped being budgeted.** Nanite (Unreal 5) made polygon
+counts effectively a non-issue. You import a film-quality asset and
+the engine streams whatever resolution the camera needs. A statue in
+the background and a statue you're standing on use the same source
+mesh.
+
+**AI changed both directions.** AI-driven upscaling (DLSS, FSR, XeSS)
+renders games at lower resolution and uses a neural network to
+reconstruct the higher-resolution output. The same GPU effectively got
+2-4x faster overnight. Inside games, AI started showing up in NPC
+behavior — characters whose conversation responses aren't from a
+script, but generated.
+
+**Distribution collapsed.** Floppies, CDs, DVDs, Steam, then a
+Steam-shaped marketplace on every platform, then cloud gaming where
+the install is somebody else's problem. The friction of getting a game
+into someone's hands fell to almost zero.
+
+## Where we are now
+
+The interesting thing about gaming in 2026 isn't any single technology.
+It's that the *bottleneck moved*. The bottleneck used to be hardware:
+can the machine draw what the artist imagined. Now hardware can draw
+basically anything. The bottleneck is asset creation, design, and the
+human-scale cost of building worlds big enough to fill the hardware.
+
+Which is exactly why AI tools are showing up in game pipelines —
+generating textures, generating geometry, generating dialogue,
+generating animations. The next decade of gaming is probably going to
+be about *how much game one person can build* far more than *how
+photorealistic it can look*.
+
+## What stuck with me
+
+Sometimes I install DOSBox and play Dave again. It runs at the speed
+my CPU lets it run (which is, frankly, too fast), and it looks
+exactly the way it looked when I was a kid. None of the technology
+that came after invalidated it. Doom is still played competitively in
+2026. People are still making new mods for Quake.
+
+The hardware kept getting better. The software kept getting better.
+But the part that matters — whether a game makes you sit forward in
+your chair — was solved a long time ago, and the rest has been a very
+long, very impressive exercise in raising the ceiling without
+abandoning the floor.

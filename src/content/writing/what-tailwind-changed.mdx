@@ -1,0 +1,154 @@
+---
+title: "What Tailwind Changed About Frontend"
+description: "How the move to utility-first CSS reshaped the way frontend teams build, ship, and argue about styles — and what we gave up to get there."
+publishedAt: 2026-03-15
+draft: false
+tags: ["css", "tailwind", "frontend"]
+---
+
+Tailwind is one of those tools where the debate has gone on long enough
+that most people have stopped having it. They've either built three
+projects with it and can't go back, or they think the markup looks
+unreadable and quietly avoid it.
+
+I've shipped both kinds of codebases, and I think the more interesting
+question isn't *is Tailwind good* — it's *what did Tailwind actually
+change about how we build frontends*, and what did we trade for it.
+
+## How we used to build
+
+The standard 2015–2019 stack looked roughly like this:
+
+```html
+<button class="btn btn--primary btn--lg">
+  Save changes
+</button>
+```
+
+```scss
+.btn {
+  display: inline-flex;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 500;
+
+  &--primary {
+    background: $brand-primary;
+    color: white;
+  }
+
+  &--lg {
+    padding: 1rem 1.75rem;
+    font-size: 1.125rem;
+  }
+}
+```
+
+Class names were semantic. CSS lived in a separate file, organized by
+BEM or some house variant. SASS gave you variables, mixins, and
+nesting. Each component had a stylesheet, and the stylesheet had a
+*story* — primary states, modifiers, responsive breakpoints, hover
+behavior.
+
+The good part: the markup was clean. The CSS was readable. You could
+look at a button and know what it was.
+
+The cost was less obvious. Every new component meant a new class name
+to invent, a new file to create, and a new entry in a growing
+dictionary of names only your team understood. The CSS bundle grew
+monotonically because nothing was ever truly safe to delete. And every
+"can you just nudge this padding" turned into a small expedition
+through three files.
+
+Then came CSS-in-JS — styled-components, emotion. It solved the
+component-coupling problem by colocating styles with the component
+that used them. But you paid for it: runtime overhead, larger
+bundles, server-side rendering complications, and a new set of
+debates about theming and prop forwarding.
+
+## What Tailwind did
+
+Tailwind's bet was simple. Most CSS is the same five or six properties
+repeated forever. Padding. Margin. Font size. Color. Display. Flex
+direction. So pre-generate every reasonable combination as a utility
+class, give them short predictable names, and write your styles
+directly in the markup.
+
+```html
+<button class="inline-flex items-center px-5 py-3 rounded-md bg-orange-500 text-white font-medium hover:bg-orange-600">
+  Save changes
+</button>
+```
+
+What this actually changed wasn't aesthetics. It was the loop. You no
+longer alt-tab between a `.tsx` file and a `.scss` file. You no longer
+invent names for one-off elements. You no longer write CSS that you'll
+delete in two weeks. The feedback cycle from "I want this padded a
+bit more" to "it's padded a bit more" dropped from minutes to seconds.
+
+The second-order effect mattered more: Tailwind shipped an *opinionated
+design system by default*. The spacing scale, the type scale, the
+color tokens — all of it standardized. A new engineer joining a
+Tailwind codebase didn't need to learn your team's CSS conventions.
+They needed to learn Tailwind. Onboarding got cheaper. Cross-team
+consistency got better almost by accident.
+
+## The good
+
+**The naming problem disappears.** No more `card__header--featured` or
+`UserProfileCardWrapperInner`. The class describes what it does, not
+what it is.
+
+**Styles are colocated with markup.** When a component moves, its
+styles move with it. When a component is deleted, its styles are
+deleted with it. The dead-CSS problem mostly goes away.
+
+**The design system is the API.** `text-sm`, `text-base`, `text-lg`
+are not arbitrary — they're a typography scale. `p-2`, `p-4`, `p-6`
+enforce a spacing rhythm. Bad design is harder to write by accident.
+
+**The compiled output is small.** Only the utilities you used end up
+in the bundle. A medium-sized app often ships less than 20kb of CSS.
+
+## The bad
+
+**The markup gets noisy.** A complex component is fifteen utility
+classes deep. You can read it, but you don't *scan* it the way you
+scanned a class name like `card--featured`.
+
+**Memorization has a real cost.** There are hundreds of utilities,
+modifiers (`hover:`, `focus:`, `dark:`, `md:`), and arbitrary-value
+syntaxes (`w-[423px]`). The learning curve is wide and shallow rather
+than steep.
+
+**Customization escapes the system.** The moment you need something
+the design tokens don't cover, you reach for arbitrary values
+(`bg-[#3a2e1f]`, `mt-[7px]`) — and now the design system is leaking.
+
+**Refactors are still hard.** Tailwind solved naming. It didn't solve
+the underlying problem that a button used in 40 places, when changed,
+is a 40-file diff. Component abstractions in React still matter; some
+teams forget that and end up with utility classes copy-pasted
+everywhere.
+
+**Migrations are painful.** Moving a large pre-Tailwind codebase to
+Tailwind is rarely worth the disruption. Moving a Tailwind codebase
+*off* Tailwind is even worse.
+
+## What it actually shifted
+
+Tailwind didn't make CSS better. CSS got better on its own — variables,
+grid, container queries, `:has()`. What Tailwind changed was the
+*process* of writing it.
+
+Frontend used to be split into two roles in a lot of companies: the
+person who wrote the markup and the person who wrote the styles.
+Sometimes literally two people, sometimes one person switching
+contexts. Tailwind collapsed that split. One person, one file, one
+mental model.
+
+That's the real impact. It made the work less ceremonial. Whether
+that's good or bad depends on whether you valued the ceremony — some
+of it was discipline, some of it was friction. Tailwind cleared out
+the friction and made you live with the consequences of having
+nowhere to hide.
